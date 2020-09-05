@@ -2,6 +2,7 @@
   background-color: var(--main-color);
   margin: 0 0 0px 60px;
   padding-left: 20px;
+  overflow-y: hidden;
 }
 
 .fa-slash {
@@ -18,8 +19,8 @@
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -77,15 +78,70 @@
 .btn-arrow {
   display: none;
 }
-
-.image img {
-  height: 400px;
-  width: 400px;
-  transition: all 0.4s ease;
+svg {
+  display: block;
+  overflow: visible;
+}
+.image svg {
+  margin: 0 6rem;
+  /* width: 100%; */
+  border: 2px solid red;
+  flex-shrink: 0;
+  flex-grow: 0;
+  transform: translateY(-100px);
+  animation: bounce 1s ease-in-out infinite alternate;
+}
+.image .laptop {
+  width: 100%;
+  overflow: visible;
+  /* margin-left: 3%; */
+  /* transition: all 0.4s ease; */
+  /* border: 1px solid red; */
 }
 
-.image img:hover {
+.image .phone {
+  width: 60%;
+  overflow: visible;
+  /* margin-left: 20%;
+  margin-right: 30%; */
+  /* border: 1px solid red; */
+}
+
+.image .tablet {
+  width: 70%;
+  /* border: 1px solid red; */
+  /* margin-left: 20%;
+  margin-right: 0%; */
+}
+.img-con {
+  position: relative;
+  max-height: 100vh;
+  overflow: hidden;
+  border: 1px solid black;
+  width: 40%;
+  margin-right: 5rem;
+}
+.image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  margin-bottom: 5rem;
+  transform: translate(0px) translateY(-100px);
+
+  /* border: 5px solid black; */
+}
+
+/* .image img:hover {
   transform: rotateZ(10deg);
+} */
+
+#kanan,
+#kiri {
+  animation: box 3s ease-in-out infinite alternate;
+  transform-origin: center center;
+  transform-box: fill-box;
 }
 
 .contact-btn:hover {
@@ -113,6 +169,24 @@ span.hov {
 
 span.hov:hover {
   transform: rotateZ(-10deg) scale(1.2);
+}
+
+@keyframes box {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
+  }
 }
 
 @keyframes blink {

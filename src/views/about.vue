@@ -17,7 +17,7 @@
         <span class="hov">u</span>
         <span class="hov">t</span>
       </h1>
-      <p>My name is Gunawan Nur Ahmad, I'm a Front End Developer but also comfortable with Backend . I'm from Lampung, Indonesia.</p>
+      <p>My name is Gunawan Nur Ahmad, I'm a Front End Developer and currently studying Computer Science. I'm from Lampung, Indonesia.</p>
       <p>Well organised person, problem solver, independent with high intention to detail. Fan of Football and love to read a book.</p>
       <p></p>
     </div>
