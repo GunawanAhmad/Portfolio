@@ -21,19 +21,30 @@ export default {
 }
 
 :root {
-  --main: white;
-  --second: #141414;
+  --main: #fafafa;
+  --second: #272727;
 }
-.navbar {
+#app {
   --main-color: var(--main);
   --second-color: var(--second);
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  z-index: 99;
 }
 
 .view {
   --main-color: var(--main);
   --second-color: var(--second);
+  width: 100%;
+  background-color: var(--main);
 }
 #app {
   display: flex;
+  background-color: var(--main-color);
+  justify-content: space-between;
 }
 </style>
