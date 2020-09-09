@@ -1,13 +1,6 @@
 <template>
   <div class="home">
     <div class="symbol">
-      <div class="top">
-        <i class="fas fa-less-than"></i>
-      </div>
-      <div class="bottom">
-        <i class="fas fa-slash"></i>
-        <i class="fas fa-greater-than"></i>
-      </div>
       <div class="container">
         <div class="text">
           <h1>
