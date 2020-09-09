@@ -1,9 +1,7 @@
 .about {
   background-color: var(--main-color);
-  margin: 0 20px 0px 0px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* margin: 0 20px 0px 0px; */
+  padding-left: 20px;
 }
 
 .symbols {
@@ -12,9 +10,14 @@
 }
 
 .top {
-  margin-left: 80px;
+  /* margin-left: 80px; */
   position: absolute;
   top: 20px;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .bottom {
@@ -35,7 +38,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  margin-left: 40px;
   height: 100vh;
   font-size: 2.2rem;
   color: var(--second-color);

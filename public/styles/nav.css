@@ -4,8 +4,12 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  font-size: 24px;
-  width: 60px;
+  font-size: 3vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 65px;
+  z-index: 999;
   background-color: var(--second-color);
   color: blue;
   padding: 40px 0;
@@ -18,13 +22,13 @@ nav {
 }
 
 .direct > div {
-  margin: 20px 0;
+  margin: 2vh 0;
   cursor: pointer;
 }
 
 .logo {
-  height: 34px;
-  width: 40px;
+  /* height: 34px;
+  width: 40px; */
   z-index: 99;
   color: white;
   font-weight: bold;
@@ -41,7 +45,7 @@ nav {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -25%;
+  left: -35%;
   right: 0;
   /* transform: translate(-50%, -50%); */
   background-color: var(--second-color);
@@ -55,12 +59,12 @@ nav {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -25%;
+  left: -40%;
   right: 0;
   /* transform: translate(-50%, -50%); */
   background-color: var(--second-color);
   color: var(--main-color);
-  font-size: 0.8rem;
+  font-size: 2vh;
   animation: fade 150ms ease-in-out alternate;
 }
 
@@ -70,12 +74,12 @@ nav {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -10%;
+  left: -15%;
   right: 0;
   /* transform: translate(-50%, -50%); */
   background-color: var(--second-color);
   color: var(--main-color);
-  font-size: 0.8rem;
+  font-size: 2vh;
   animation: fade 150ms ease-in-out alternate;
 }
 
@@ -85,12 +89,12 @@ nav {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -40%;
+  left: -60%;
   right: 0;
   /* transform: translate(-50%, -50%); */
   background-color: var(--second-color);
   color: var(--main-color);
-  font-size: 0.8rem;
+  font-size: 2vh;
   animation: fade 150ms ease-in-out alternate;
 }
 .work:hover::after {
@@ -105,7 +109,7 @@ nav {
   /* transform: translate(-50%, -50%); */
   background-color: var(--second-color);
   color: var(--main-color);
-  font-size: 0.8rem;
+  font-size: 2vh;
   animation: fade 150ms ease-in-out alternate;
 }
 
@@ -114,6 +118,62 @@ a {
   color: var(--main-color);
 }
 
+.menu-toogle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -5.5px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+.menu-toogle {
+  display: none;
+  flex-direction: column;
+  height: 15px;
+  justify-content: space-between;
+  position: relative;
+}
+.menu-toogle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: var(--main-color);
+  border-radius: 3px;
+  transition: all 0.5s ease;
+}
+
+.menu-toogle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toogle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-4px, -4px);
+}
+
+.menu-toogle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toogle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toogle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+}
+
+.mob-ver {
+  display: none;
+  position: fixed;
+  height: 40px;
+  top: 50px;
+  width: 100vw;
+  background-color: var(--second-color);
+  color: white;
+  z-index: 999999;
+  font-family: "Montserrat", sans-serif;
+}
 @keyframes fade {
   0% {
     opacity: 0;
@@ -121,5 +181,45 @@ a {
 
   100% {
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  nav {
+    width: 100%;
+    height: 50px;
+    flex-direction: row;
+    padding: 0 2rem;
+  }
+  .direct {
+    flex-direction: row;
+  }
+  .direct > div {
+    margin: 0 2rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .menu-toogle {
+    display: flex;
+  }
+  .direct {
+    display: none;
+  }
+  .mob-ver {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 3vh;
+    padding: 0px 40px;
+    transition: transform 250ms ease-in-out;
+    transform: translateX(100%);
+  }
+
+  .mob-ver.slide {
+    transform: translateX(0);
+  }
+  .mob-ver > div {
+    position: relative;
   }
 }

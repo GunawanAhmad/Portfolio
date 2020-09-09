@@ -28,23 +28,31 @@ export default {
   --main-color: var(--main);
   --second-color: var(--second);
 }
-.navbar {
+/* .navbar {
   position: fixed;
   top: 0;
   left: 0;
   overflow-x: hidden;
   z-index: 99;
-}
+} */
 
 .view {
   --main-color: var(--main);
   --second-color: var(--second);
   width: 100%;
   background-color: var(--main);
+  margin: 0 0 0 8vh;
 }
 #app {
   display: flex;
   background-color: var(--main-color);
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 900px) {
+  .view {
+    margin: 0px 0 0 10px;
+    /* padding: 60px 0; */
+  }
 }
 </style>
