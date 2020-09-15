@@ -1,5 +1,6 @@
 <template>
   <div class="navbar">
+    <div class="cursor"></div>
     <nav>
       <div class="logo">Ga.</div>
       <div class="direct">
@@ -74,6 +75,23 @@ export default {
     slide() {
       this.$refs.nav.classList.toggle("slide");
     },
+  },
+  mounted() {
+    let cursor = document.querySelector(".cursor");
+    document.addEventListener("mousemove", (e) => {
+      cursor.setAttribute(
+        "style",
+        `top : ${e.pageY - 10}px; left : ${e.pageX - 10}px`
+      );
+    });
+
+    document.addEventListener("click", () => {
+      cursor.classList.add("click");
+
+      setTimeout(() => {
+        cursor.classList.remove("click");
+      }, 300);
+    });
   },
 };
 </script>

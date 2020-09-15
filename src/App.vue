@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <navBar class="navbar" />
+    <div class="navbar">
+      <navBar />
+    </div>
 
     <div class="view">
       <div class="symbols">
@@ -26,6 +28,14 @@ export default {
   components: {
     navBar,
   },
+
+  methods: {
+    navMouse() {
+      console.log("nav");
+      let cursor = document.querySelector(".cursor");
+      cursor.style.border = "1px solid white";
+    },
+  },
 };
 </script>
 <style>
@@ -42,6 +52,14 @@ export default {
 #app {
   --main-color: var(--main);
   --second-color: var(--second);
+}
+
+.navbar:hover .cursor {
+  border: 1px solid var(--main);
+}
+
+.cursor.click {
+  animation: expand 150ms ease-in-out infinite;
 }
 
 .top {
@@ -85,6 +103,7 @@ export default {
   margin: 0 0 0 8vh;
   position: relative;
 }
+
 #app {
   display: flex;
   background-color: var(--main-color);
@@ -93,11 +112,13 @@ export default {
 }
 
 .fade-enter {
-  transform: translateX(100%);
+  transform: translateX(100%) scale(0.5);
 }
 
 .fade-enter-active {
   transition: transform 500ms;
+  animation: slide-in 500ms linear;
+  animation-delay: 500ms;
 }
 
 .fade-leave {
@@ -113,6 +134,25 @@ export default {
 @keyframes slide {
   to {
     transform: translateX(-100%) scale(0.7);
+  }
+}
+
+@keyframes slide-in {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 

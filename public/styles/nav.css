@@ -16,6 +16,19 @@ nav {
   /* box-shadow: 0 1px 3px 2px rgb(168, 168, 168); */
   font-family: "Montserrat", sans-serif;
 }
+.cursor {
+  height: 30px;
+  width: 30px;
+  border: 1px solid var(--second);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 9999999;
+  pointer-events: none;
+  /* background: var(--main); */
+  /* mix-blend-mode: screen; */
+
+  /* transition: 50ms ease-in-out; */
+}
 .direct {
   display: flex;
   flex-direction: column;
@@ -24,6 +37,10 @@ nav {
 .direct > div {
   margin: 2vh 0;
   cursor: pointer;
+  /* background: red; */
+  width: 65px;
+  height: auto;
+  text-align: center;
 }
 
 .logo {
@@ -45,8 +62,10 @@ nav {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -35%;
+  left: 0;
   right: 0;
+  display: grid;
+  place-content: center;
   /* transform: translate(-50%, -50%); */
   background-color: var(--second-color);
   color: var(--main-color);
@@ -59,8 +78,10 @@ nav {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -40%;
+  left: 0;
   right: 0;
+  display: grid;
+  place-content: center;
   /* transform: translate(-50%, -50%); */
   background-color: var(--second-color);
   color: var(--main-color);
@@ -74,7 +95,9 @@ nav {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -15%;
+  left: 0;
+  display: grid;
+  place-content: center;
   right: 0;
   /* transform: translate(-50%, -50%); */
   background-color: var(--second-color);
@@ -89,8 +112,10 @@ nav {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -60%;
+  left: 0;
   right: 0;
+  display: grid;
+  place-content: center;
   /* transform: translate(-50%, -50%); */
   background-color: var(--second-color);
   color: var(--main-color);
@@ -104,8 +129,10 @@ nav {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -20%;
+  left: 0;
   right: 0;
+  display: grid;
+  place-content: center;
   /* transform: translate(-50%, -50%); */
   background-color: var(--second-color);
   color: var(--main-color);
