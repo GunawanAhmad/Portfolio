@@ -52,8 +52,8 @@ h1 div {
 
 .light {
   background-color: var(--main-color);
-  height: 1vw;
-  width: 1vw;
+  height: 0.5vw;
+  width: 0.5vw;
   border-radius: 50%;
   position: absolute;
   left: 15%;

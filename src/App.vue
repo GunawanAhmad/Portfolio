@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="welcome" ref="welcome">
+    <!-- <div class="welcome" ref="welcome">
       <svg
         width="962"
         height="155"
@@ -45,7 +45,7 @@
           stroke-width="5"
         />
       </svg>
-    </div>
+    </div>-->
     <div>
       <navBar />
     </div>
@@ -82,11 +82,11 @@ export default {
       cursor.style.border = "1px solid white";
     },
   },
-  mounted() {
-    setTimeout(() => {
-      this.$refs.welcome.classList.toggle("show");
-    }, 4000);
-  },
+  // mounted() {
+  //   setTimeout(() => {
+  //     this.$refs.welcome.classList.toggle("show");
+  //   }, 4000);
+  // },
 };
 </script>
 <style>
@@ -300,5 +300,8 @@ nav .direct:hover .cursor {
   .top {
     top: 60px;
   }
+}
+
+@media only screen and (max-width: 700px) {
 }
 </style>
