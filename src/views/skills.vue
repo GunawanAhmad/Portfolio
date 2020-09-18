@@ -30,16 +30,56 @@
     </div>
     <div class="illus">
       <div class="front__end">
-        <div class="vue">Vue.Js</div>
-        <div class="js">Javascript</div>
-        <div class="sass">Sass</div>
-        <div class="css">CSS</div>
-        <div class="html">HTML</div>
+        <div class="vue">
+          Vue.Js
+          <span>
+            <i class="fab fa-vuejs"></i>
+          </span>
+        </div>
+        <div class="js">
+          Javascript
+          <span>
+            <i class="fab fa-js-square"></i>
+          </span>
+        </div>
+        <div class="sass">
+          Sass
+          <span>
+            <i class="fab fa-sass"></i>
+          </span>
+        </div>
+        <div class="css">
+          CSS
+          <span>
+            <i class="fab fa-css3-alt"></i>
+          </span>
+        </div>
+        <div class="html">
+          HTML
+          <span>
+            <i class="fab fa-html5"></i>
+          </span>
+        </div>
       </div>
       <div class="back__end">
-        <div class="express">Express.Js</div>
-        <div class="node">Node.Js</div>
-        <div class="mongo">MongoDB</div>
+        <div class="express">
+          Express.Js
+          <span>
+            <i class="fab fa-node-js"></i>
+          </span>
+        </div>
+        <div class="node">
+          Node.Js
+          <span>
+            <i class="fab fa-node"></i>
+          </span>
+        </div>
+        <div class="mongo">
+          MongoDB
+          <span>
+            <i class="fas fa-database"></i>
+          </span>
+        </div>
       </div>
     </div>
   </div>

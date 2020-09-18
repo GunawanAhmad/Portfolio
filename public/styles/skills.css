@@ -50,7 +50,7 @@ span.hov:hover {
 .illus .front__end,
 .illus .back__end {
   height: 35%;
-  min-width: 20%;
+  min-width: 30%;
   border: 4px solid var(--second-color);
   border-top: none;
   margin: auto;
@@ -59,25 +59,33 @@ span.hov:hover {
   position: relative;
   padding: 1.5px 3px;
   justify-content: flex-end;
+  border-radius: 5px 5px 10px 10px;
 }
 
-.illus .front__end > div,
-.illus .back__end > div {
-  height: 2em;
+.illus .front__end div,
+.illus .back__end div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  flex-wrap: wrap;
+  height: 15%;
   width: 100%;
+  cursor: pointer;
   background: var(--second-color);
   color: var(--main-color);
-  display: grid;
-  place-content: center;
   margin: 1.5px 0;
   font-family: "Montserrat", sans-serif;
-  transform: translateY(-1500%);
+  transform: translateY(-1500%) scale(1);
   opacity: 0;
+  transform-origin: center center;
+  transform-box: fill;
   animation-name: stackY;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   animation-duration: 1s;
 }
+
 .illus .front__end div:nth-child(1) {
   animation-delay: 2s;
 }
@@ -93,6 +101,7 @@ span.hov:hover {
 }
 .illus .front__end div:nth-child(5) {
   animation-delay: 0ms;
+  border-radius: 0 0 5px 5px;
 }
 
 .illus .back__end div:nth-child(1) {
@@ -104,12 +113,13 @@ span.hov:hover {
 
 .illus .back__end div:nth-child(3) {
   animation-delay: 0ms;
+  border-radius: 0 0 5px 5px;
 }
 
 .illus .front__end::after,
 .illus .back__end::after {
   position: absolute;
-  bottom: -10%;
+  bottom: -15%;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -162,13 +172,16 @@ span.hov:hover {
   .text p {
     font-size: 1rem;
   }
+
+  .illus .front__end > div span,
+  .illus .back__end > div span {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 780px) {
   .text {
-    width: 90%;
-    height: auto;
-    margin-top: 20%;
+    width: 80%;
   }
   .skills {
     flex-direction: column;
@@ -177,6 +190,7 @@ span.hov:hover {
     flex-direction: column;
     width: 90%;
     overflow: hidden;
+    display: none;
   }
   .illus .front__end,
   .illus .back__end {

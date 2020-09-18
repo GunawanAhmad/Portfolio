@@ -103,6 +103,7 @@ export default {
 #app {
   --main-color: var(--main);
   --second-color: var(--second);
+  /* filter: invert(1) hue-rotate(180deg); */
 }
 
 .welcome {
