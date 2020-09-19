@@ -28,6 +28,44 @@
   margin: 0.5rem 0;
 }
 
+.text p a {
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.text p a::before {
+  color: var(--main-color);
+  text-align: center;
+  left: -2px;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  position: absolute;
+  transform: translateX(-100%);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 0;
+  background: var(--second-color);
+  transition: transform 250ms ease;
+}
+
+.text p a:nth-child(1)::before {
+  content: "Linkedln";
+}
+.text p a:nth-child(2)::before {
+  content: "contact me.";
+}
+
+.text p a:nth-child(1):hover:before {
+  opacity: 1;
+  transform: translateX(0);
+}
+.text p a:nth-child(2):hover:before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 span.hov {
   width: auto;
   transition: all 0.4s ease;
@@ -79,6 +117,7 @@ span.hov:hover {
   transform: translateY(-1500%) scale(1);
   opacity: 0;
   transform-origin: center center;
+  /* position: relative;  */
   transform-box: fill;
   animation-name: stackY;
   animation-timing-function: linear;

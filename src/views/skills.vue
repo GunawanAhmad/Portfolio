@@ -30,7 +30,7 @@
     </div>
     <div class="illus">
       <div class="front__end">
-        <div class="vue">
+        <div class="vue" @mouseover="hover">
           Vue.Js
           <span>
             <i class="fab fa-vuejs"></i>
@@ -86,7 +86,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    hover() {},
+  },
+};
 </script>
 
 <style scoped src="../../public/styles/skills.css">
