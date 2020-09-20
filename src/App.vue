@@ -186,6 +186,7 @@ nav .direct:hover .cursor {
   width: 100%;
   background-color: var(--main);
   margin: 0 0 0 8vh;
+  height: 100vh;
   position: relative;
 }
 
@@ -295,7 +296,7 @@ nav .direct:hover .cursor {
 
 @media only screen and (max-width: 900px) {
   .view {
-    margin: 0px 0 0 10px;
+    margin: 0px 0 0 0px;
     /* padding: 60px 0; */
   }
   .top {

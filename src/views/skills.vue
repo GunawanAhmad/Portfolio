@@ -29,56 +29,92 @@
       </p>
     </div>
     <div class="illus">
+      <!-- <h1>My Tools</h1> -->
       <div class="front__end">
-        <div class="vue" @mouseover="hover">
-          Vue.Js
+        <div
+          class="vue stack"
+          @click="showInfo('Vue.Js', 'fab fa-vuejs', 'Vue Js is a Javascript framework, I use Vue.Js when i have to build Medium or Big Project.')"
+        >
+          <p>Vue.Js</p>
+
           <span>
             <i class="fab fa-vuejs"></i>
           </span>
         </div>
-        <div class="js">
-          Javascript
+        <div
+          class="js stack"
+          @click="showInfo('Javascript', 'fab fa-js-square', 'JavaScript is used to create responsive, interactive elements for web pages, enhancing the user experience. I use pure Javascript when I have to build small project only. ')"
+        >
+          <p>Javascript</p>
+
           <span>
             <i class="fab fa-js-square"></i>
           </span>
         </div>
-        <div class="sass">
-          Sass
+        <div
+          class="sass stack"
+          @click="showInfo('Sass', 'fab fa-sass', 'Sass help me to keep things organised in CSS especially when I have to deal with Big project.')"
+        >
+          <p>Sass</p>
+
           <span>
             <i class="fab fa-sass"></i>
           </span>
         </div>
-        <div class="css">
-          CSS
+        <div class="css stack">
+          <p>CSS</p>
+
           <span>
             <i class="fab fa-css3-alt"></i>
           </span>
         </div>
-        <div class="html">
-          HTML
+        <div class="html stack">
+          <p>HTML</p>
+
           <span>
             <i class="fab fa-html5"></i>
           </span>
         </div>
       </div>
       <div class="back__end">
-        <div class="express">
-          Express.Js
+        <div class="express stack">
+          <p>Express.Js</p>
+
           <span>
             <i class="fab fa-node-js"></i>
           </span>
         </div>
-        <div class="node">
-          Node.Js
+        <div class="node stack">
+          <p>Node.Js</p>
+
           <span>
             <i class="fab fa-node"></i>
           </span>
         </div>
-        <div class="mongo">
-          MongoDB
+        <div class="mongo stack">
+          <p>MongoDB</p>
+
           <span>
             <i class="fas fa-database"></i>
           </span>
+        </div>
+      </div>
+    </div>
+    <div class="warn hide" ref="warn">
+      <span>
+        <i class="fas fa-info-circle"></i>
+      </span>
+      <p>Click Icon for More Information</p>
+    </div>
+    <div class="skills-info" ref="skillInfo">
+      <div class="card">
+        <div class="logo">
+          <i :class="icon"></i>
+        </div>
+        <h3>{{ title }}</h3>
+        <p>{{ content }}</p>
+        <div class="close" @click="closeInfo">
+          <i class="fas fa-times"></i>
         </div>
       </div>
     </div>
@@ -87,8 +123,35 @@
 
 <script>
 export default {
+  data() {
+    return {
+      title: "",
+      icon: "",
+      content: "",
+    };
+  },
+  mounted() {
+    let warn = this.$refs.warn;
+    setTimeout(() => {
+      warn.classList.toggle("hide");
+      setTimeout(() => {
+        warn.classList.toggle("hide");
+      }, 5000);
+    }, 3000);
+  },
+
   methods: {
-    hover() {},
+    showInfo(title, icon, content) {
+      this.title = title;
+      this.icon = icon;
+      this.content = content;
+      let info = this.$refs.skillInfo;
+      info.classList.toggle("show");
+    },
+    closeInfo() {
+      let info = this.$refs.skillInfo;
+      info.classList.toggle("show");
+    },
   },
 };
 </script>

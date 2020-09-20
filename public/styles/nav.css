@@ -73,7 +73,7 @@ nav {
   /* transform: translate(-50%, -50%); */
   background-color: var(--second-color);
   color: var(--main-color);
-  font-size: 0.8rem;
+  font-size: 2vh;
   animation: fade 150ms ease-in-out alternate;
 }
 .profile:hover::after {

@@ -1,10 +1,13 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
 .space {
   padding: 5px;
 }
 .skills {
   background-color: var(--main-color);
-  position: relative;
-  padding-left: 20px;
+  /* position: relative; */
+  padding-left: 12px;
   overflow-y: hidden;
   display: flex;
   justify-content: space-between;
@@ -32,6 +35,7 @@
   display: inline-flex;
   position: relative;
   overflow: hidden;
+  /* border: 1px solid red; */
 }
 
 .text p a::before {
@@ -48,6 +52,10 @@
   z-index: 0;
   background: var(--second-color);
   transition: transform 250ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-decoration: underline; */
 }
 
 .text p a:nth-child(1)::before {
@@ -85,6 +93,10 @@ span.hov:hover {
   align-items: center;
 }
 
+/* .illus h1 {
+  font-family: "Montserrat", sans-serif;
+} */
+
 .illus .front__end,
 .illus .back__end {
   height: 35%;
@@ -94,6 +106,7 @@ span.hov:hover {
   margin: auto;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   position: relative;
   padding: 1.5px 3px;
   justify-content: flex-end;
@@ -175,6 +188,87 @@ span.hov:hover {
   content: "Back End";
 }
 
+.warn {
+  background: var(--second-color);
+  padding: 10px;
+  color: var(--main-color);
+  position: absolute;
+  right: 0;
+  /* height: 2.5rem; */
+  display: flex;
+  /* align-items: center; */
+  bottom: 20%;
+
+  /* transform: translateX(100%); */
+
+  border-radius: 7px 0 0 7px;
+  transition: transform 500ms ease;
+}
+.warn span {
+  margin-right: 0.5rem;
+}
+.warn.hide {
+  transform: translateX(100%);
+}
+
+.skills-info {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* padding: 0; */
+  background: var(--second-color);
+  color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 1s ease;
+  z-index: 10;
+}
+
+.skills-info.show {
+  transform: translateX(0);
+}
+
+.skills-info .card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 40%;
+  /* border: 1px solid red; */
+  text-align: center;
+  background: var(--second-color);
+  color: var(--main-color);
+}
+
+.skills-info .card .close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: 500ms linear;
+}
+
+.skills-info .card .close:hover {
+  transform: rotate(180deg) scale(1.5);
+}
+
+.skills-info .card .logo {
+  font-size: 2rem;
+}
+
+@keyframes warn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 @keyframes stackY {
   0% {
     opacity: 0;
@@ -218,37 +312,83 @@ span.hov:hover {
   }
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 900px) {
   .text {
     width: 80%;
+    height: auto;
+    margin-top: 150px;
   }
   .skills {
     flex-direction: column;
+    padding: 0;
   }
   .illus {
     flex-direction: column;
     width: 90%;
     overflow: hidden;
-    display: none;
+    margin-left: 40px;
+    /* display: none; */
   }
   .illus .front__end,
   .illus .back__end {
     height: 20%;
     width: 100%;
     flex-direction: row-reverse;
-    margin: 2rem 0;
+    margin: 2rem 0 0.2rem 0;
     border-top: 4px solid var(--second-color);
-    border-right: none;
+    border: none;
+    /* margin: 0.5rem; */
   }
   .illus .front__end::after,
   .illus .back__end::after {
-    bottom: -100%;
+    top: -20px;
+    text-align: left;
   }
   .illus .front__end > div,
   .illus .back__end > div {
     transform: translateY(0) translateX(1000%);
     animation-name: stackX;
-    margin: 1.5px 1.5px;
-    width: 5rem;
+    margin: 0 3px 0 0;
+    width: 3rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+  }
+  .illus .front__end > div p,
+  .illus .back__end > div p {
+    display: none;
+  }
+  .illus .front__end > div span,
+  .illus .back__end > div span {
+    display: inline;
+  }
+  .illus .front__end div:nth-child(5) {
+    animation-delay: 0ms;
+    border-radius: 0 0 0px 0px;
+  }
+  .illus .back__end div:nth-child(3) {
+    border-radius: 0;
+  }
+
+  .skills-info {
+    margin-top: 40px;
+  }
+  .skills-info .card {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .skills {
+    padding: 0;
+  }
+  .text {
+    /* margin: 20px; */
+    font-size: 1rem;
+  }
+  .skills-info .card {
+    width: 80%;
   }
 }
