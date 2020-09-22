@@ -61,14 +61,20 @@
             <i class="fab fa-sass"></i>
           </span>
         </div>
-        <div class="css stack">
+        <div
+          class="css stack"
+          @click="showInfo('CSS', 'fab fa-css3-alt', 'CSS is a tool for Create beautiful, responsive layout, and implementing the design into the Web App')"
+        >
           <p>CSS</p>
 
           <span>
             <i class="fab fa-css3-alt"></i>
           </span>
         </div>
-        <div class="html stack">
+        <div
+          class="html stack"
+          @click="showInfo('HTML', 'fab fa-html5', 'HTML is a standard for describing a structure and presentation of information in a web.')"
+        >
           <p>HTML</p>
 
           <span>
@@ -77,7 +83,10 @@
         </div>
       </div>
       <div class="back__end">
-        <div class="express stack">
+        <div
+          class="express stack"
+          @click="showInfo('Express.Js', 'fab fa-node-js', 'Express.Js is a framework for Node.Js, ')"
+        >
           <p>Express.Js</p>
 
           <span>
@@ -136,7 +145,7 @@ export default {
       warn.classList.toggle("hide");
       setTimeout(() => {
         warn.classList.toggle("hide");
-      }, 5000);
+      }, 3000);
     }, 3000);
   },
 
