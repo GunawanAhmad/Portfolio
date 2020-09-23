@@ -317,6 +317,7 @@ span.hov:hover {
     width: 80%;
     height: auto;
     margin-top: 150px;
+    margin-left: 0;
   }
   .skills {
     flex-direction: column;

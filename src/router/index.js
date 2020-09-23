@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import About from "../views/about.vue";
 import Skills from "../views/skills.vue";
 import Contact from "../views/contact.vue";
+import Work from "../views/work.vue";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/contact",
     name: "Contact Page",
     component: Contact
+  },
+  {
+    path: "/work",
+    name: "My Work Page",
+    component: Work
   }
 ];
 

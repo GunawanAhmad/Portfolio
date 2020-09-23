@@ -147,6 +147,7 @@ form button {
 @media only screen and (max-width: 900px) {
   .contact {
     flex-direction: column;
+    padding: 0;
   }
   .text {
     align-items: center;

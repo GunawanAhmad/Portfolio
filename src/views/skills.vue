@@ -24,7 +24,7 @@
       <p>I also have full stack development experience with Node.Js and MongoDB.</p>
       <p>
         Visit my
-        <a href="#">Linkedln</a> profile for more details or just
+        <a href="https://linkedin.com/in/gunawan-ahmad-0148441b7">Linkedln</a> profile for more details or just
         <router-link to="/contact">contact me.</router-link>
       </p>
     </div>
@@ -113,7 +113,7 @@
       <span>
         <i class="fas fa-info-circle"></i>
       </span>
-      <p>Click Icon for More Information</p>
+      <p>Click icon for more information!</p>
     </div>
     <div class="skills-info" ref="skillInfo">
       <div class="card">

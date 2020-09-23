@@ -145,9 +145,9 @@ nav .direct:hover .cursor {
 }
 
 .top {
-  position: absolute;
+  position: fixed;
   top: 20px;
-  left: 20px;
+  left: 80px;
   z-index: 8;
   font-size: 24px;
   color: var(--second-color);
@@ -155,7 +155,7 @@ nav .direct:hover .cursor {
 
 .bottom {
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
   align-items: center;
@@ -301,6 +301,7 @@ nav .direct:hover .cursor {
   }
   .top {
     top: 60px;
+    left: 20px;
   }
 }
 
