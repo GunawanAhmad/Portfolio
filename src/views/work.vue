@@ -3,16 +3,43 @@
     <div class="work-list">
       <div class="background" ref="back"></div>
       <div class="kliniku list shrink" ref="kliniku">
+        <transition name="detail">
+          <div class="detail" v-if="isDetail">
+            <h2>Kliniku</h2>
+            <p>This is a Docter consulting Website</p>
+            <p>
+              I build this web with HTML, CSS, Vue.Js, Express.Js, Node.Js, and
+              MongoDB
+            </p>
+            <p>Please note that this isn't my design, only the code</p>
+          </div>
+        </transition>
+
         <div class="img">
           <img src="../../src/assets/kliniku.svg" alt />
         </div>
 
         <div class="tool">
-          <div class="btn">
-            <a href="https://github.com/GunawanAhmad/Sisfo-Klinik-Full-Stack">Code</a>
+          <div class="btn" ref="btn">
+            <a
+              href="https://github.com/GunawanAhmad/Sisfo-Klinik-Full-Stack"
+              class="code"
+              >Code</a
+            >
+            <button v-if="isDetail" @click="detail" ref="image">Image</button>
+            <button class="detail" @click="detail" v-else>Detail</button>
           </div>
           <div class="icon" @click="expandProject">
-            <i :class="icon"></i>
+            <div v-if="!isExpand">
+              <span>
+                <i class="fas fa-expand"></i>
+              </span>
+            </div>
+            <div v-else>
+              <span>
+                <i class="fas fa-compress"></i>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -21,7 +48,7 @@
       <span>
         <i class="fas fa-info-circle"></i>
       </span>
-      <p>This are not my design, only the code!</p>
+      <p>This is not my design, only the code!</p>
     </div>
   </div>
 </template>
@@ -32,6 +59,7 @@ export default {
     return {
       isExpand: false,
       icon: "fas fa-expand",
+      isDetail: false,
     };
   },
   mounted() {
@@ -45,18 +73,15 @@ export default {
   },
   methods: {
     expandProject() {
-      let back = this.$refs.back;
-      let kliniku = this.$refs.kliniku;
-      back.classList.toggle("show");
-      kliniku.classList.toggle("expand");
-      kliniku.classList.toggle("shrink");
+      this.$refs.back.classList.toggle("show");
+      this.$refs.kliniku.classList.toggle("expand");
+      this.$refs.kliniku.classList.toggle("shrink");
       this.isExpand = !this.isExpand;
-      if (this.isExpand) {
-        this.icon = "fas fa-compress";
-      } else {
-        this.icon = "fas fa-expand";
-      }
-      console.log(this.icon);
+      this.isDetail = false;
+    },
+    detail() {
+      this.isDetail = !this.isDetail;
+      this.$refs.image.classList.toggle("show");
     },
   },
 };
