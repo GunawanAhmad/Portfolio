@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <!-- <div class="welcome" ref="welcome">
+
+    <div class="cursor" ref="cursor" v-if="isMixSupport"></div>
+    
+    <div class="welcome" ref="welcome">
       <svg
         width="962"
         height="155"
@@ -45,7 +48,7 @@
           stroke-width="5"
         />
       </svg>
-    </div>-->
+    </div>
     <div>
       <navBar />
     </div>
@@ -62,7 +65,10 @@
       </div>
 
       <transition name="fade" mode="out-in">
-        <router-view />
+        <keep-alive>
+          <router-view />
+        </keep-alive>
+        
       </transition>
     </div>
   </div>
@@ -71,240 +77,46 @@
 <script>
 import navBar from "./components/nav.vue";
 export default {
+  data() {
+    return {
+      isMixSupport : true
+    }
+  },
   components: {
     navBar,
   },
 
-  methods: {
-    navMouse() {
-      console.log("nav");
-      let cursor = document.querySelector(".cursor");
-      cursor.style.border = "1px solid white";
-    },
+  mounted() {
+
+    //check if mix-blend-mode porperty support in the brwoser
+    if (window.getComputedStyle(document.body).mixBlendMode !== undefined) {
+      this.isMixSupport = true
+    } else {
+      this.isMixSupport = false
+    }
+    
+    
+    this.$store.state.hover.push(this.$refs.cursor)
+    let cursor = this.$refs.cursor
+    let btn = this.$store.state.hover;
+    btn.forEach(p => {
+      p.addEventListener('mouseenter', ()=> {
+        cursor.classList.toggle('hover')
+      })
+      p.addEventListener('mouseleave', ()=> {
+        cursor.classList.toggle('hover')
+      })
+    })
+    
+    document.addEventListener("mousemove", (e) => {
+      cursor.setAttribute("style", `top : ${e.pageY}px; left : ${e.pageX}px`);
+    })
+    setTimeout(() => {
+      this.$refs.welcome.classList.toggle("show");
+    }, 4000);
   },
-  // mounted() {
-  //   setTimeout(() => {
-  //     this.$refs.welcome.classList.toggle("show");
-  //   }, 4000);
-  // },
 };
 </script>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<style src="../public/styles/app.css">
 
-:root {
-  --main: #fafafa;
-  --second: #272727;
-}
-#app {
-  --main-color: var(--main);
-  --second-color: var(--second);
-  /* filter: invert(1) hue-rotate(180deg); */
-}
-
-.welcome {
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  background-color: #272727;
-  z-index: 999999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* transition: opacity 500ms ease; */
-  pointer-events: none;
-  opacity: 1;
-}
-
-.welcome.show {
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-.welcome svg {
-  width: 60%;
-  animation: fill 200ms ease forwards 3.5s;
-}
-
-.navbar:hover .cursor {
-  border: 1px solid var(--main);
-}
-
-nav .direct:hover .cursor {
-  transform: scale(1.5);
-}
-
-.cursor.click {
-  animation: expand 150ms ease-in-out infinite;
-  /* transform-origin: top center; */
-}
-
-.top {
-  position: fixed;
-  top: 20px;
-  left: 80px;
-  z-index: 8;
-  font-size: 24px;
-  color: var(--second-color);
-}
-
-.bottom {
-  display: flex;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  align-items: center;
-  justify-content: center;
-  z-index: 8;
-  font-size: 24px;
-  color: var(--second-color);
-}
-.contact-btn:hover .cursor {
-  border: 1px solid red;
-}
-
-.fa-slash {
-  transform: rotateZ(70deg);
-  margin-right: -10px;
-}
-/* .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  z-index: 99;
-} */
-
-.view {
-  --main-color: var(--main);
-  --second-color: var(--second);
-  width: 100%;
-  background-color: var(--main);
-  margin: 0 0 0 8vh;
-  height: 100vh;
-  position: relative;
-}
-
-#app {
-  display: flex;
-  background-color: var(--main-color);
-  justify-content: space-between;
-  overflow: hidden;
-}
-
-.fade-enter {
-  transform: translateX(100%) scale(0.5);
-}
-
-.fade-enter-active {
-  transition: transform 500ms;
-  animation: slide-in 500ms linear;
-  animation-delay: 500ms;
-}
-
-.fade-leave {
-}
-.fade-leave-active {
-  opacity: 0.3;
-  transition: all 500ms;
-  transform: scale(0.7);
-  animation: slide 500ms linear;
-  animation-delay: 200ms;
-}
-
-#logo path:nth-child(1) {
-  stroke-dasharray: 1128px;
-  stroke-dashoffset: 1128px;
-  animation: line-dash 2s ease forwards;
-}
-
-#logo path:nth-child(2) {
-  stroke-dasharray: 664px;
-  stroke-dashoffset: 664px;
-  animation: line-dash 2s ease forwards 0.3s;
-}
-#logo path:nth-child(3) {
-  stroke-dasharray: 418px;
-  stroke-dashoffset: 418px;
-  animation: line-dash 2s ease forwards 0.6s;
-}
-#logo path:nth-child(4) {
-  stroke-dasharray: 718px;
-  stroke-dashoffset: 718px;
-  animation: line-dash 2s ease forwards 0.9s;
-}
-#logo path:nth-child(5) {
-  stroke-dasharray: 784px;
-  stroke-dashoffset: 784px;
-  animation: line-dash 2s ease forwards 1.2s;
-}
-#logo path:nth-child(6) {
-  stroke-dasharray: 1084px;
-  stroke-dashoffset: 1084px;
-  animation: line-dash 2s ease forwards 1.5s;
-}
-#logo path:nth-child(7) {
-  stroke-dasharray: 664px;
-  stroke-dashoffset: 664px;
-  animation: line-dash 2s ease forwards 1.8s;
-}
-
-@keyframes line-dash {
-  to {
-    stroke-dashoffset: 0px;
-  }
-}
-
-@keyframes fill {
-  from {
-    fill: transparent;
-  }
-  to {
-    fill: #fafafa;
-  }
-}
-
-@keyframes slide {
-  to {
-    transform: translateX(-100%) scale(0.7);
-  }
-}
-
-@keyframes slide-in {
-  to {
-    transform: scale(1);
-  }
-}
-
-@keyframes expand {
-  0% {
-    transform: scale(1) translate(-50%, -50%);
-  }
-
-  50% {
-    transform: scale(2) translate(-50%, -50%);
-  }
-  100% {
-    transform: scale(1) translate(-50%, -50%);
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .view {
-    margin: 0px 0 0 0px;
-    /* padding: 60px 0; */
-  }
-  .top {
-    top: 60px;
-    left: 20px;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-}
 </style>

@@ -128,6 +128,9 @@ span.hov:hover {
 @media only screen and (max-width: 700px) {
   .about {
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .text {
     margin: 20px;

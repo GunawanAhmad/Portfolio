@@ -46,7 +46,10 @@
           <div class="deks">
             <p>Front End Developer / Freelancer</p>
           </div>
-          <button class="contact-btn" @click="$router.push({path : '/about'})">
+          <!-- <div class="cursor"></div> -->
+          <button ref="btn" class="contact-btn" @click="$router.push({path : '/about'})">
+          
+
             about me
             <span class="btn-arrow">
               <i class="fas fa-arrow-right"></i>
@@ -146,7 +149,7 @@
                     d="M680.049 520.841H668.519C667.695 520.841 666.906 521.169 666.323 521.752C665.741 522.335 665.414 523.125 665.414 523.95C665.414 524.774 665.741 525.565 666.323 526.148C666.906 526.731 667.695 527.058 668.519 527.058H680.049C680.873 527.058 681.662 526.731 682.244 526.148C682.827 525.565 683.154 524.774 683.154 523.95C683.154 523.125 682.827 522.335 682.244 521.752C681.662 521.169 680.873 520.841 680.049 520.841Z"
                     fill="#272727"
                   />
-                  <g id="kanan">
+                  <g id="kanan" v-if="isBoxSupport">
                     <path id="Vector 17" d="M837.325 473H809.362V501H837.325V473Z" fill="#E6E6E6" />
                     <path
                       id="Vector 18"
@@ -154,7 +157,7 @@
                       fill="#272727"
                     />
                   </g>
-                  <g id="kiri">
+                  <g id="kiri" v-if="isBoxSupport">
                     <path id="Vector 19" d="M350.963 242H323V270H350.963V242Z" fill="#E6E6E6" />
                     <path
                       id="Vector 20"
@@ -367,7 +370,7 @@
                   d="M78 362.16C78 362.16 43.77 329.26 35 329.29C35 329.29 63.23 330.58 78.79 360.41L78 362.16Z"
                   fill="#272727"
                 />
-                <g id="flower">
+                <g id="flower" v-if="isBoxSupport">
                   <path
                     id="flower 2"
                     d="M1125.79 267.42C1125.79 267.42 1110.56 261.23 1062.11 283.42C1013.66 305.61 1007.61 302.82 995.06 299.42C982.51 296.02 975.53 295.21 962.06 276.65C962.06 276.65 952.58 225.25 943.4 217.28C934.22 209.31 895.22 221.82 895.22 221.82C895.22 221.82 848.47 232.55 839.56 170.09C839.56 170.09 845.88 122.98 837.27 108.53C837.27 108.53 854.65 116.02 883.33 103.92C912.01 91.82 934.98 116.92 934.98 116.92C934.98 116.92 942.21 135.65 941.45 146.81C940.69 157.97 945.28 162.17 958.96 156.81C958.96 156.81 965.68 147.25 956.16 131.45C946.64 115.65 939.85 103.88 942.51 91.6C945.17 79.32 952.8 62.32 977.34 53.81C1001.88 45.3 1035.21 43.66 1051.21 37C1067.21 30.34 1071.08 26 1071.08 26C1071.08 26 1061.24 35.86 1084.43 77.68C1107.62 119.5 1092.84 137.68 1092.84 137.68C1092.84 137.68 1080.5 167.08 1026.03 164.68C1026.03 164.68 973.54 166.6 1002.16 188.86C1002.16 188.86 1020.48 185.13 1047.88 176.42C1075.28 167.71 1095.06 203.65 1099.97 228.66C1104.88 253.67 1125.79 267.42 1125.79 267.42Z"
@@ -723,21 +726,21 @@
                 />
                 <path
                   id="Vector 65"
-                  opacity="0.8"
+                  opacity="1"
                   d="M181 168.09C188.136 168.09 193.92 162.306 193.92 155.17C193.92 148.034 188.136 142.25 181 142.25C173.864 142.25 168.08 148.034 168.08 155.17C168.08 162.306 173.864 168.09 181 168.09Z"
-                  fill="#FA5959"
+                  fill="#272727"
                 />
                 <path
                   id="Vector 66"
-                  opacity="0.8"
+                  opacity="1"
                   d="M218.61 168.09C225.746 168.09 231.53 162.306 231.53 155.17C231.53 148.034 225.746 142.25 218.61 142.25C211.475 142.25 205.69 148.034 205.69 155.17C205.69 162.306 211.475 168.09 218.61 168.09Z"
-                  fill="#FED253"
+                  fill="#272727"
                 />
                 <path
                   id="Vector 67"
-                  opacity="0.8"
+                  opacity="1"
                   d="M256.21 168.09C263.346 168.09 269.13 162.306 269.13 155.17C269.13 148.034 263.346 142.25 256.21 142.25C249.074 142.25 243.29 148.034 243.29 155.17C243.29 162.306 249.074 168.09 256.21 168.09Z"
-                  fill="#8CCF4D"
+                  fill="#272727"
                 />
                 <path
                   id="Vector 68"
@@ -881,14 +884,29 @@ export default {
     return {
       toggle: false,
       counter: 1,
+      isBoxSupport : true
     };
   },
   mounted() {
+    this.$store.state.hover.push(this.$refs.btn);
+    if (window.getComputedStyle(document.body).transformBox !== undefined) {
+      this.isBoxSupport = true
+    } else {
+      this.isBoxSupport = false
+    }
+
+    
+
+
+    let cursor = document.querySelector(".cursor");
+    document.addEventListener("mousemove", (e) => {
+      cursor.setAttribute("style", `top : ${e.pageY}px; left : ${e.pageX}px`);
+    })
     const img = document.querySelectorAll(".image svg");
     // console.log(img[0].clientWidth);
     const slide = document.querySelector(".image");
     let size = img[0].clientWidth;
-    console.log(size);
+    // console.log(size);
     let counter = 1;
     let isForward = true;
     const eyes = document.querySelectorAll(".pupil");
@@ -905,7 +923,7 @@ export default {
       slide.style.transition = "transform 0.5s ease-in-out";
       if (!isForward) {
         slide.style.transform =
-          "translateX(" + -size * counter + "px) translateY(-15%)";
+          "translateX(" + -size * counter + "px) translateY(-10%)";
         if (counter <= 0) {
           isForward = true;
         } else {
@@ -914,7 +932,7 @@ export default {
       }
       if (isForward) {
         slide.style.transform =
-          "translateX(" + -size * counter + "px) translateY(-15%)";
+          "translateX(" + -size * counter + "px) translateY(-10%)";
         if (counter >= 2) {
           isForward = false;
         } else {

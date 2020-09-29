@@ -16,22 +16,10 @@ nav {
   /* box-shadow: 0 1px 3px 2px rgb(168, 168, 168); */
   font-family: "Montserrat", sans-serif;
 }
-/* .cursor {
-  height: 30px;
-  width: 30px;
-  border: 1px solid var(--second);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  z-index: 9999999;
-  pointer-events: none;
-  transform-origin: center;
-  transform-box: fill;
-  /* background: var(--main); */
-/* mix-blend-mode: screen; */
 
-/* transition: 50ms ease-in-out; 
-} */
+
+/* transition: 50ms ease-in-out;  */
+/* } */ 
 
 .direct {
   display: flex;
@@ -40,7 +28,7 @@ nav {
 
 .direct > div {
   margin: 2vh 0;
-  cursor: pointer;
+  /* cursor: pointer; */
   /* background: red; */
   width: 65px;
   height: auto;
@@ -60,8 +48,8 @@ nav {
   /* border: 1px solid red; */
 }
 
-.home:hover::after {
-  content: "Home";
+.direct > div:hover:after,.mob-ver > div:hover:after {
+  content: attr(data-content);
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -75,74 +63,10 @@ nav {
   color: var(--main-color);
   font-size: 2vh;
   animation: fade 150ms ease-in-out alternate;
-}
-.profile:hover::after {
-  content: "Profile";
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: grid;
-  place-content: center;
-  /* transform: translate(-50%, -50%); */
-  background-color: var(--second-color);
-  color: var(--main-color);
-  font-size: 2vh;
-  animation: fade 150ms ease-in-out alternate;
+  z-index: 999;
 }
 
-.skills:hover::after {
-  content: "Skills";
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  display: grid;
-  place-content: center;
-  right: 0;
-  /* transform: translate(-50%, -50%); */
-  background-color: var(--second-color);
-  color: var(--main-color);
-  font-size: 2vh;
-  animation: fade 150ms ease-in-out alternate;
-}
 
-.contact:hover::after {
-  content: "Contact";
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: grid;
-  place-content: center;
-  /* transform: translate(-50%, -50%); */
-  background-color: var(--second-color);
-  color: var(--main-color);
-  font-size: 2vh;
-  animation: fade 150ms ease-in-out alternate;
-}
-.work:hover::after {
-  content: "My Work";
-  pointer-events: none;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: grid;
-  place-content: center;
-  /* transform: translate(-50%, -50%); */
-  background-color: var(--second-color);
-  color: var(--main-color);
-  font-size: 2vh;
-  animation: fade 150ms ease-in-out alternate;
-}
 
 a {
   text-decoration: none;

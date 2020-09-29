@@ -103,7 +103,7 @@ h1 div {
   width: 9em;
   font-size: 1.5vw;
   margin-top: 15px;
-  cursor: pointer;
+  /* cursor: pointer; */
   color: var(--second-color);
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
@@ -113,7 +113,9 @@ h1 div {
   justify-content: space-around;
   transition: all 0.2s ease;
   padding: 0.3em 0.5em;
+  border-radius: 5px;
 }
+
 
 .btn-arrow {
   display: none;
@@ -178,7 +180,7 @@ h1 div {
   min-height: 100vh;
   margin-bottom: 5rem;
   /* border: 1px solid black; */
-  transform: translateY(-15%);
+  transform: translateY(-10%);
 
   /* transform: translate(0px) translateY(-100px); */
 
@@ -210,6 +212,10 @@ h1 div {
   color: var(--main-color);
   background-color: var(--second-color);
   width: 12em;
+}
+
+.contact-btn:hover ~ .cursor {
+  height: 50px;
 }
 
 .contact-btn:hover .btn-arrow {
@@ -351,6 +357,9 @@ span.hov:hover {
 @media only screen and (max-width: 700px) {
   .home {
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .text {
     margin: 20px;

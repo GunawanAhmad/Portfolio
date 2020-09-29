@@ -1,31 +1,31 @@
 <template>
   <div class="navbar">
-    <!-- <div class="cursor"></div> -->
+    
     <nav>
       <div class="logo">Ga.</div>
       <div class="direct">
-        <div class="home">
+        <div class="home" data-content="Home">
           <router-link to="/">
             <i class="icon fa fa-home fa"></i>
           </router-link>
         </div>
-        <div class="profile">
+        <div class="profile" data-content="About">
           <router-link to="/about">
             <i class="fas fa-user"></i>
           </router-link>
         </div>
 
-        <div class="skills">
+        <div class="skills" data-content="Skills">
           <router-link to="/skills">
             <i class="fas fa-tools"></i>
           </router-link>
         </div>
-        <div class="work">
-          <router-link to="/work">
+        <div class="work" data-content="My Work">
+          <router-link to="/work" >
             <i class="fas fa-eye"></i>
           </router-link>
         </div>
-        <div class="contact">
+        <div class="contact" data-content="Contact">
           <router-link to="/contact">
             <i class="fas fa-address-card"></i>
           </router-link>
@@ -39,28 +39,28 @@
       </div>
     </nav>
     <div class="mob-ver" ref="nav">
-      <div class="home">
+      <div class="home" data-content="Home">
         <router-link to="/">
           <i class="icon fa fa-home fa"></i>
         </router-link>
       </div>
-      <div class="profile">
+      <div class="profile" data-content="Profile">
         <router-link to="/about">
           <i class="fas fa-user"></i>
         </router-link>
       </div>
 
-      <div class="skills">
+      <div class="skills" data-content="Skills">
         <router-link to="/skills">
           <i class="fas fa-tools"></i>
         </router-link>
       </div>
-      <div class="work">
+      <div class="work" data-content="Work">
         <router-link to="/work">
           <i class="fas fa-eye"></i>
         </router-link>
       </div>
-      <div class="contact">
+      <div class="contact" data-content="Contact">
         <router-link to="/contact">
           <i class="fas fa-address-card"></i>
         </router-link>
@@ -76,21 +76,23 @@ export default {
       this.$refs.nav.classList.toggle("slide");
     },
   },
-  // mounted() {
-  //   let cursor = document.querySelector(".cursor");
-  //   document.addEventListener("mousemove", (e) => {
-  //     cursor.setAttribute("style", `top : ${e.pageY}px; left : ${e.pageX}px`);
-  //   });
+  mounted() {
 
-  //   document.addEventListener("click", () => {
-  //     cursor.classList.add("click");
+    this.$store.state.hover.push(document.querySelector('.logo'))
+    let nav1 = document.querySelectorAll('.direct div')
+    nav1.forEach(p => {
+      this.$store.state.hover.push(p)
+    })
 
-  //     setTimeout(() => {
-  //       cursor.classList.remove("click");
-  //     }, 300);
-  //   });
-  // },
-};
+    let nav2 = document.querySelectorAll('.mob-ver div')
+    nav2.forEach(p => {
+      this.$store.state.hover.push(p)
+    })
+  }
+}
+
+
+
 </script>
 
 <style scoped src="../../public/styles/nav.css">

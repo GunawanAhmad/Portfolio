@@ -15,16 +15,22 @@
       </h1>
 
       <p>
-        The main area of my expertise is front end development
-        (client side of the web).
+        The main area of my expertise is front end development (client side of
+        the web).
       </p>
 
-      <p>Build beautiful and interactive Web Application with HTML, CSS, and Javascript or Vue.js.</p>
+      <p>
+        Build beautiful and interactive Web Application with HTML, CSS, and
+        Javascript or Vue.js.
+      </p>
 
-      <p>I also have full stack development experience with Node.Js and MongoDB.</p>
+      <p>
+        I also have full stack development experience with Node.Js and MongoDB.
+      </p>
       <p>
         Visit my
-        <a href="https://linkedin.com/in/gunawan-ahmad-0148441b7">Linkedln</a> profile for more details or just
+        <a href="https://linkedin.com/in/gunawan-ahmad-0148441b7">Linkedln</a>
+        profile for more details or just
         <router-link to="/contact">contact me.</router-link>
       </p>
     </div>
@@ -33,7 +39,13 @@
       <div class="front__end">
         <div
           class="vue stack"
-          @click="showInfo('Vue.Js', 'fab fa-vuejs', 'Vue Js is a Javascript framework, I use Vue.Js when i have to build Medium or Big Project.')"
+          @click="
+            showInfo(
+              'Vue.Js',
+              'fab fa-vuejs',
+              'Vue Js is a Javascript framework, I use Vue.Js when i have to build Medium or Big Project.'
+            )
+          "
         >
           <p>Vue.Js</p>
 
@@ -43,7 +55,13 @@
         </div>
         <div
           class="js stack"
-          @click="showInfo('Javascript', 'fab fa-js-square', 'JavaScript is used to create responsive, interactive elements for web pages, enhancing the user experience. I use pure Javascript when I have to build small project only. ')"
+          @click="
+            showInfo(
+              'Javascript',
+              'fab fa-js-square',
+              'JavaScript is used to create responsive, interactive elements for web pages, enhancing the user experience. I use pure Javascript when I have to build small project only. '
+            )
+          "
         >
           <p>Javascript</p>
 
@@ -53,7 +71,13 @@
         </div>
         <div
           class="sass stack"
-          @click="showInfo('Sass', 'fab fa-sass', 'Sass help me to keep things organised in CSS especially when I have to deal with Big project.')"
+          @click="
+            showInfo(
+              'Sass',
+              'fab fa-sass',
+              'Sass help me to keep things organised in CSS especially when I have to deal with Big project.'
+            )
+          "
         >
           <p>Sass</p>
 
@@ -63,7 +87,13 @@
         </div>
         <div
           class="css stack"
-          @click="showInfo('CSS', 'fab fa-css3-alt', 'CSS is a tool for Create beautiful, responsive layout, and implementing the design into the Web App')"
+          @click="
+            showInfo(
+              'CSS',
+              'fab fa-css3-alt',
+              'CSS is a tool for Create beautiful, responsive layout, and implementing the design into the Web App'
+            )
+          "
         >
           <p>CSS</p>
 
@@ -73,7 +103,13 @@
         </div>
         <div
           class="html stack"
-          @click="showInfo('HTML', 'fab fa-html5', 'HTML is a standard for describing a structure and presentation of information in a web.')"
+          @click="
+            showInfo(
+              'HTML',
+              'fab fa-html5',
+              'HTML is a standard for describing a structure and presentation of information in a web.'
+            )
+          "
         >
           <p>HTML</p>
 
@@ -85,7 +121,13 @@
       <div class="back__end">
         <div
           class="express stack"
-          @click="showInfo('Express.Js', 'fab fa-node-js', 'Express.Js is a framework for Node.Js, ')"
+          @click="
+            showInfo(
+              'Express.Js',
+              'fab fa-node-js',
+              'Express.Js is a framework for Node.Js, '
+            )
+          "
         >
           <p>Express.Js</p>
 
@@ -113,7 +155,7 @@
       <span>
         <i class="fas fa-info-circle"></i>
       </span>
-      <p>Click icon for more information!</p>
+      <p>Click the stack for more information!</p>
     </div>
     <div class="skills-info" ref="skillInfo">
       <div class="card">

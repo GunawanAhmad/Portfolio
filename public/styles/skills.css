@@ -7,7 +7,7 @@
 .skills {
   background-color: var(--main-color);
   /* position: relative; */
-  padding-left: 12px;
+  /* padding-left: 12px; */
   overflow-y: hidden;
   display: flex;
   justify-content: space-between;
@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 40px;
+  margin-left: 50px;
   height: 100vh;
   font-size: 2vw;
   color: var(--second-color);
@@ -213,7 +213,7 @@ span.hov:hover {
 
 .skills-info {
   position: absolute;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   /* padding: 0; */
   background: var(--second-color);
@@ -384,6 +384,9 @@ span.hov:hover {
 @media only screen and (max-width: 700px) {
   .skills {
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .text {
     /* margin: 20px; */

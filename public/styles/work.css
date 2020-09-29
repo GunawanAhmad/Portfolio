@@ -73,7 +73,7 @@
 }
 .list.expand img {
   border-radius: 5px;
-  cursor: default;
+  /* cursor: default; */
 }
 
 .list img {
@@ -81,7 +81,7 @@
   height: auto;
   width: 100%;
   /* border: 1px solid red; */
-  cursor: pointer;
+  /* cursor: pointer; */
   /* position: relative; */
 }
 
@@ -142,7 +142,7 @@
 
 .tool .btn a,
 .tool .btn button {
-  cursor: pointer;
+  /* cursor: pointer; */
   color: var(--main-color);
   font-size: 1rem;
   padding: 0.3em 0.5em;
@@ -212,7 +212,7 @@
   bottom: -2rem;
   color: var(--main-color);
   transition: all 500ms ease;
-  cursor: pointer;
+  /* cursor: pointer; */
   z-index: 10;
 }
 
