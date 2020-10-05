@@ -1,6 +1,7 @@
 <template>
   <div class="contact">
-    <div class="text">
+    <div class="main" ref="main">
+      <div class="text">
       <div class="header">
         <h1>
           <span class="hov">C</span>
@@ -72,10 +73,16 @@
         <p>Gunawan Ahmad</p>
       </a>
     </div>
+    </div>
+    
+    <div class="loader hide" ref="loader">
+      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -99,6 +106,29 @@ export default {
     send(e) {
       if (this.checkAnswer.toString() != this.answer) {
         e.preventDefault();
+      } else {
+        e.preventDefault()
+        this.$refs.main.classList.toggle('hide')
+        this.$refs.loader.classList.toggle('hide')
+        axios.post('https://api.apispreadsheets.com/data/1739/', {
+          data : {
+            name : this.name,
+            email : this.email,
+            message : this.message
+          }
+        })
+        .then(res => {
+          console.log(res)
+          this.$refs.main.classList.toggle('hide')
+          this.$refs.loader.classList.toggle('hide')
+          this.email = ''
+          this.name = ''
+          this.message = ''
+          this.checkAnswer = ''
+        })
+        .catch(err => {
+          console.log(err)
+        })
       }
     },
   },

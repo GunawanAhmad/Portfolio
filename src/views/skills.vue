@@ -29,9 +29,9 @@
       </p>
       <p>
         Visit my
-        <a href="https://linkedin.com/in/gunawan-ahmad-0148441b7">Linkedln</a>
+        <a href="https://linkedin.com/in/gunawan-ahmad-0148441b7" class="link">Linkedln</a>
         profile for more details or just
-        <router-link to="/contact">contact me.</router-link>
+        <router-link to="/contact" class="link">contact me.</router-link>
       </p>
     </div>
     <div class="illus">
@@ -42,8 +42,8 @@
           @click="
             showInfo(
               'Vue.Js',
-              'fab fa-vuejs',
-              'Vue Js is a Javascript framework, I use Vue.Js when i have to build Medium or Big Project.'
+              'vue',
+              'A Javascript framework'
             )
           "
         >
@@ -58,8 +58,8 @@
           @click="
             showInfo(
               'Javascript',
-              'fab fa-js-square',
-              'JavaScript is used to create responsive, interactive elements for web pages, enhancing the user experience. I use pure Javascript when I have to build small project only. '
+              'javascript',
+              'JavaScript is the Programming Language for the Web'
             )
           "
         >
@@ -74,8 +74,8 @@
           @click="
             showInfo(
               'Sass',
-              'fab fa-sass',
-              'Sass help me to keep things organised in CSS especially when I have to deal with Big project.'
+              'sass',
+              'Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets.'
             )
           "
         >
@@ -90,7 +90,7 @@
           @click="
             showInfo(
               'CSS',
-              'fab fa-css3-alt',
+              'css',
               'CSS is a tool for Create beautiful, responsive layout, and implementing the design into the Web App'
             )
           "
@@ -106,7 +106,7 @@
           @click="
             showInfo(
               'HTML',
-              'fab fa-html5',
+              'html',
               'HTML is a standard for describing a structure and presentation of information in a web.'
             )
           "
@@ -124,7 +124,7 @@
           @click="
             showInfo(
               'Express.Js',
-              'fab fa-node-js',
+              'express',
               'Express.Js is a framework for Node.Js, '
             )
           "
@@ -135,14 +135,26 @@
             <i class="fab fa-node-js"></i>
           </span>
         </div>
-        <div class="node stack">
+        <div class="node stack" @click="
+            showInfo(
+              'Node Js',
+              'node',
+              'A Javascript runtime environment that executes JavaScript code outside a web browser. For example for Backend.'
+            )
+          ">
           <p>Node.Js</p>
 
           <span>
             <i class="fab fa-node"></i>
           </span>
         </div>
-        <div class="mongo stack">
+        <div class="mongo stack" @click="
+            showInfo(
+              'MongoDB',
+              'mongodb',
+              'MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program.'
+            )
+          ">
           <p>MongoDB</p>
 
           <span>
@@ -160,7 +172,8 @@
     <div class="skills-info" ref="skillInfo">
       <div class="card">
         <div class="logo">
-          <i :class="icon"></i>
+          <img :src="require('../../src/assets/' + icon + '.svg')">
+          
         </div>
         <h3>{{ title }}</h3>
         <p>{{ content }}</p>
@@ -177,11 +190,12 @@ export default {
   data() {
     return {
       title: "",
-      icon: "",
+      icon: "vue",
       content: "",
     };
   },
   mounted() {
+    
     let warn = this.$refs.warn;
     setTimeout(() => {
       warn.classList.toggle("hide");
@@ -198,7 +212,7 @@ export default {
       this.content = content;
       let info = this.$refs.skillInfo;
       info.classList.toggle("show");
-    },
+    },   
     closeInfo() {
       let info = this.$refs.skillInfo;
       info.classList.toggle("show");

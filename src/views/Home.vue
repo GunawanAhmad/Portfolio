@@ -44,7 +44,7 @@
             <span class="hov">.</span>
           </h1>
           <div class="deks">
-            <p>Front End Developer / Freelancer</p>
+            <p>Front End Developer</p>
           </div>
           <!-- <div class="cursor"></div> -->
           <button ref="btn" class="contact-btn" @click="$router.push({path : '/about'})">
@@ -887,8 +887,11 @@ export default {
       isBoxSupport : true
     };
   },
+  
   mounted() {
+
     this.$store.state.hover.push(this.$refs.btn);
+    
     if (window.getComputedStyle(document.body).transformBox !== undefined) {
       this.isBoxSupport = true
     } else {
@@ -898,10 +901,7 @@ export default {
     
 
 
-    let cursor = document.querySelector(".cursor");
-    document.addEventListener("mousemove", (e) => {
-      cursor.setAttribute("style", `top : ${e.pageY}px; left : ${e.pageX}px`);
-    })
+    
     const img = document.querySelectorAll(".image svg");
     // console.log(img[0].clientWidth);
     const slide = document.querySelector(".image");

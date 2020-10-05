@@ -155,9 +155,9 @@
   overflow: hidden;
 }
 
-.tool .btn a {
-  /* border-left: 1px solid var(--main-color); */
-}
+/* .tool .btn a {
+  border-left: 1px solid var(--main-color);
+} */
 .tool .btn button {
   /* border-right: 1px solid var(--main-color); */
   display: none;
@@ -262,6 +262,9 @@
 @media only screen and (max-width: 900px) {
   .list {
     width: 60%;
+  }
+  .list.expand {
+    width: 100%;
   }
 }
 
