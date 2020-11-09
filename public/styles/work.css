@@ -13,12 +13,10 @@
 }
 
 .work h1 {
-  /* margin-top: 8rem; */
-  /* margin-bottom: 2rem; */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 5rem;
+  top: 7rem;
   text-align: center;
 }
 
@@ -271,7 +269,7 @@
   transform: translateY(-100%);
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1024px) {
   .list {
     width: 60%;
   }
@@ -283,5 +281,8 @@
 @media only screen and (max-width: 700px) {
   .list {
     width: 80%;
+  }
+  .work h1 {
+    font-size: 1.2rem;
   }
 }
