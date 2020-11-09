@@ -1,7 +1,9 @@
 <template>
   <div class="work">
+    <h1>projects that i've done</h1>
+    
     <div class="work-list">
-      <div class="background" ref="back"></div>
+      <div class="background" ref="back" @click="expandProject"></div>
       <div class="kliniku list shrink" ref="kliniku">
         <transition name="detail">
           <div class="detail" v-if="isDetail">

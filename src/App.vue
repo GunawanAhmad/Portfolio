@@ -63,7 +63,7 @@
           <i class="fas fa-greater-than"></i>
         </div>
       </div>
-
+ 
       <transition name="fade" mode="out-in">
         <keep-alive>
           <router-view />

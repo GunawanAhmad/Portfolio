@@ -43,6 +43,11 @@ nav {
   font-weight: bold;
 }
 
+.logo img {
+  height: 40px;
+  /* width: 30px; */
+}
+
 .direct > div {
   position: relative;
   /* border: 1px solid red; */
@@ -178,3 +183,4 @@ a {
     position: relative;
   }
 }
+

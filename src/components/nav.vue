@@ -2,7 +2,9 @@
   <div class="navbar">
     
     <nav>
-      <div class="logo">Ga.</div>
+      <div class="logo">
+        <img src="../assets/logoName.svg" alt="">
+      </div>
       <div class="direct">
         <div class="home" data-content="Home">
           <router-link to="/">
