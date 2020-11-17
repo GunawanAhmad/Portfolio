@@ -31,7 +31,8 @@
         Visit my
         <a href="https://linkedin.com/in/gunawan-ahmad-0148441b7" class="link">Linkedln</a>
         profile for more details or just
-        <router-link to="/contact" class="link">contact me.</router-link>
+        <span @click="pageTransition"><router-link to="/contact" class="link" >contact me.</router-link></span>
+        
       </p>
     </div>
     <div class="illus">
@@ -186,7 +187,10 @@
 </template>
 
 <script>
+
+import TransitionMixin from '../mixins/transition';
 export default {
+  mixins : [TransitionMixin],
   data() {
     return {
       title: "",

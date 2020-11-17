@@ -54,7 +54,7 @@
     align-items: center;
     /* transition: opacity 500ms ease; */
     pointer-events: none;
-    opacity: 1;
+    opacity: 0;
   }
   
   .welcome.show {
@@ -150,6 +150,52 @@
     transform: scale(0.7);
     animation: slide 500ms linear;
     animation-delay: 200ms;
+  }
+
+  .trans-back {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--second-color);
+    z-index: 99;
+    color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    transform: translateX(-100%);
+    transition: transform 800ms ease;
+  }
+  .trans-back.show {
+    transform: translateX(0);
+  }
+
+  .trans-back img {
+    height: 40px;
+    text-align: center;
+  }
+  
+  .trans-back p {
+    margin: .5rem 0;
+  }
+
+  .trans-back .loadbar {
+    width: 250px;
+  }
+  .trans-back .loadbar .progress {
+    width: 0;
+    height: 4px;
+    background-color: var(--main-color);
+    border-radius: 10px;
+  }
+  .trans-back.show .loadbar .progress {
+    width: 100%;
+    transition: width 700ms ease;
+    transition-delay: 800ms;
   }
   
   #logo path:nth-child(1) {

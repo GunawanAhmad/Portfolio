@@ -58,6 +58,7 @@
 
 <script>
 export default {
+  
   data() {
     return {
       isExpand: false,

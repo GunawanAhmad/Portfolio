@@ -47,7 +47,7 @@
             <p>Front End Developer</p>
           </div>
           <!-- <div class="cursor"></div> -->
-          <button ref="btn" class="contact-btn" @click="$router.push({path : '/about'})">
+          <button ref="btn" class="contact-btn" @click="emit">
           
 
             about me
@@ -877,15 +877,23 @@
 <script>
 // // @ is an alias to /src
 // import anime from "animejs";
+import TransitionMixin from '../mixins/transition';
 
 export default {
   name: "Home",
+  mixins : [TransitionMixin],
   data() {
     return {
       toggle: false,
       counter: 1,
       isBoxSupport : true
     };
+  },
+  methods : {
+    emit() {
+      this.pageTransition();
+      this.$router.push({path : '/about'})
+    }
   },
   
   mounted() {

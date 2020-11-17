@@ -9,7 +9,7 @@ nav {
   left: 0;
   top: 0;
   width: 65px;
-  z-index: 9;
+  z-index: 100;
   background-color: var(--second-color);
   color: blue;
   padding: 40px 0;
@@ -134,6 +134,9 @@ a {
   z-index: 100;
   font-family: "Montserrat", sans-serif;
 }
+
+
+
 @keyframes fade {
   0% {
     opacity: 0;

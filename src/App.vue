@@ -71,6 +71,14 @@
         
       </transition>
     </div>
+
+    <div class="trans-back" ref="transition">
+      <img src="./assets/logoName.svg" alt="">
+      <p>Gunawan is still thinking</p>
+      <div class="loadbar">
+        <div class="progress"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -82,6 +90,7 @@ export default {
       isMixSupport : true
     }
   },
+  
   components: {
     navBar,
   },
@@ -94,6 +103,8 @@ export default {
     } else {
       this.isMixSupport = false
     }
+
+    this.$store.state.backgroundTransition = this.$refs.transition
     
     
     this.$store.state.hover.push(this.$refs.cursor)
