@@ -74,7 +74,7 @@
 
     <div class="trans-back" ref="transition">
       <img src="./assets/logoName.svg" alt="">
-      <p>Gunawan is still thinking</p>
+      <p>I'm still thinking</p>
       <div class="loadbar">
         <div class="progress"></div>
       </div>
