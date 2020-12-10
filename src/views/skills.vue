@@ -29,9 +29,9 @@
       </p>
       <p>
         Visit my
-        <a href="https://linkedin.com/in/gunawan-ahmad-0148441b7" class="link">Linkedln</a>
+        <a href="https://linkedin.com/in/gunawan-ahmad-0148441b7" class="link linkedln">Linkedln</a>
         profile for more details or just
-        <span @click="pageTransition"><router-link to="/contact" class="link" >contact me.</router-link></span>
+        <span @click="pageTransition"><router-link to="/contact" class="link contact" >contact me.</router-link></span>
         
       </p>
     </div>

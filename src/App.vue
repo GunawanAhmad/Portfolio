@@ -3,7 +3,7 @@
 
     <div class="cursor" ref="cursor" v-if="isMixSupport"></div>
     
-    <div class="welcome" ref="welcome">
+    <div class="welcome show" ref="welcome">
       <svg
         width="962"
         height="155"
@@ -74,7 +74,7 @@
 
     <div class="trans-back" ref="transition">
       <img src="./assets/logoName.svg" alt="">
-      <p>I'm still thinking</p>
+      <p>Let me think &#129300;</p>
       <div class="loadbar">
         <div class="progress"></div>
       </div>
@@ -122,9 +122,9 @@ export default {
     document.addEventListener("mousemove", (e) => {
       cursor.setAttribute("style", `top : ${e.pageY}px; left : ${e.pageX}px`);
     })
-    setTimeout(() => {
-      this.$refs.welcome.classList.toggle("show");
-    }, 4000);
+    // setTimeout(() => {
+    //   this.$refs.welcome.classList.toggle("show");
+    // }, 4000);
   },
 };
 </script>
