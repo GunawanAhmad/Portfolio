@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-
     <div class="cursor" ref="cursor" v-if="isMixSupport"></div>
-    
-    <div class="welcome show" ref="welcome">
+
+    <!-- <div class="welcome" ref="welcome">
       <svg
         width="962"
         height="155"
@@ -48,7 +47,7 @@
           stroke-width="5"
         />
       </svg>
-    </div>
+    </div> -->
     <div>
       <navBar />
     </div>
@@ -63,17 +62,16 @@
           <i class="fas fa-greater-than"></i>
         </div>
       </div>
- 
+
       <transition name="fade" mode="out-in">
         <keep-alive>
           <router-view />
         </keep-alive>
-        
       </transition>
     </div>
 
     <div class="trans-back" ref="transition">
-      <img src="./assets/logoName.svg" alt="">
+      <img src="./assets/logoName.svg" alt="" />
       <p>Let me think &#129300;</p>
       <div class="loadbar">
         <div class="progress"></div>
@@ -87,47 +85,43 @@ import navBar from "./components/nav.vue";
 export default {
   data() {
     return {
-      isMixSupport : true
-    }
+      isMixSupport: true,
+    };
   },
-  
+
   components: {
     navBar,
   },
 
   mounted() {
-
     //check if mix-blend-mode porperty support in the brwoser
     if (window.getComputedStyle(document.body).mixBlendMode !== undefined) {
-      this.isMixSupport = true
+      this.isMixSupport = true;
     } else {
-      this.isMixSupport = false
+      this.isMixSupport = false;
     }
 
-    this.$store.state.backgroundTransition = this.$refs.transition
-    
-    
-    this.$store.state.hover.push(this.$refs.cursor)
-    let cursor = this.$refs.cursor
+    this.$store.state.backgroundTransition = this.$refs.transition;
+
+    this.$store.state.hover.push(this.$refs.cursor);
+    let cursor = this.$refs.cursor;
     let btn = this.$store.state.hover;
-    btn.forEach(p => {
-      p.addEventListener('mouseenter', ()=> {
-        cursor.classList.toggle('hover')
-      })
-      p.addEventListener('mouseleave', ()=> {
-        cursor.classList.toggle('hover')
-      })
-    })
-    
+    btn.forEach((p) => {
+      p.addEventListener("mouseenter", () => {
+        cursor.classList.toggle("hover");
+      });
+      p.addEventListener("mouseleave", () => {
+        cursor.classList.toggle("hover");
+      });
+    });
+
     document.addEventListener("mousemove", (e) => {
       cursor.setAttribute("style", `top : ${e.pageY}px; left : ${e.pageX}px`);
-    })
-    // setTimeout(() => {
-    //   this.$refs.welcome.classList.toggle("show");
-    // }, 4000);
+    });
+    setTimeout(() => {
+      this.$refs.welcome.classList.toggle("show");
+    }, 4000);
   },
 };
 </script>
-<style src="../public/styles/app.css">
-
-</style>
+<style src="../public/styles/app.css"></style>
