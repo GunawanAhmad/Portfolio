@@ -8,7 +8,7 @@
 .work-page .title-page {
   margin-top: 5rem;
   text-align: center;
-  font-size: 3vw;
+  font-size: 3rem;
 }
 
 .work-list {
@@ -33,6 +33,19 @@
 
 .information .description {
   margin-top: 2rem;
+}
+
+.information .tools {
+  margin-top: 2rem;
+  font-weight: 600;
+}
+
+.tools span {
+  font-weight: 400;
+}
+
+.tools .design {
+  margin-top: 0.5rem;
 }
 
 .information .links {
@@ -61,7 +74,7 @@
 }
 
 .work .img {
-  max-height: 500px;
+  max-height: 300px;
   max-width: 500px;
   box-shadow: 0 6.9px 5.3px rgba(0, 0, 0, 0.02),
     0 23.2px 17.9px rgba(0, 0, 0, 0.03), 0 104px 80px rgba(0, 0, 0, 0.05);
@@ -108,19 +121,23 @@ span.hov:hover {
 }
 
 @media only screen and (max-width: 1024px) {
-  .list {
-    width: 60%;
+  .work-page .title-page {
+    font-size: 2rem;
   }
-  .list.expand {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .list {
+  .work-list {
+    margin-top: 0;
     width: 80%;
   }
-  .work-page h1 {
-    font-size: 1.2rem;
+  .work-list .work {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .work .information {
+    width: 100%;
+  }
+
+  .work .img {
+    margin-top: 2rem;
   }
 }

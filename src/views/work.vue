@@ -24,6 +24,15 @@
           <p class="description">
             {{ work.description }}
           </p>
+          <div class="tools">
+            <p>
+              Code Tools :
+              <span>{{ work.codeTools.join(", ") }}</span>
+            </p>
+            <p class="design">
+              Design : <span>{{ work.design }}</span>
+            </p>
+          </div>
           <div class="links">
             <a :href="work.link" :class="work.link === '' ? 'disabled' : ''"
               >Visit</a
@@ -50,21 +59,25 @@ export default {
       isDetail: false,
       myProjects: [
         {
-          title: "Web Application for Online Consulting (Kliniku)",
+          title: "Web Application for Online Consultation (Kliniku)",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, quas nulla? Modi sint veritatis reiciendis omnis illo eos a, numquam hic corporis, officia laboriosam fugiat culpa quos optio fuga praesentium",
+            "Kliniku is online consultation platform where people can fill in an online form about their health issue to send to a doctor. The doctor can response and give them medicine advice.",
           source: "https://github.com/GunawanAhmad/Sisfo-Klinik-Full-Stack",
           link: "",
+          codeTools: ["VueJS", "MongoDB", "NodeJs", "ExpressJS"],
+          design: "Design by Faris Azizy",
           img: "kliniku.svg",
           key: 1,
         },
         {
           title: "Radio and Checkbox Input Generator",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, quas nulla? Modi sint veritatis reiciendis omnis illo eos a, numquam hic corporis, officia laboriosam fugiat culpa quos optio fuga praesentium",
+            "Radio and Checkbox Input Generator is a web where developer can make their custom radio and checkbox input for HTML and CSS code and make the developtment process easier and faster.",
           source: "https://github.com/GunawanAhmad/Radio-Checkbox-Generator",
           link: "https://gunawanahmad.github.io/Radio-Checkbox-Generator/",
           img: "generator.png",
+          codeTools: ["HTML", "SCSS", "Javascript"],
+          design: "Design by Me with Adobe XD",
           key: 2,
         },
       ],
