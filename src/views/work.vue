@@ -61,7 +61,7 @@ export default {
         {
           title: "Web Application for Online Consultation (Kliniku)",
           description:
-            "Kliniku is online consultation platform where people can fill in an online form about their health issue to send to a doctor. The doctor can response and give them medicine advice.",
+            "Kliniku is an online consultation platform where people can fill in an online form about their health issue to send for a doctor. The doctor can respond and give them medical advice.",
           source: "https://github.com/GunawanAhmad/Sisfo-Klinik-Full-Stack",
           link: "",
           codeTools: ["VueJS", "MongoDB", "NodeJs", "ExpressJS"],
@@ -72,13 +72,24 @@ export default {
         {
           title: "Radio and Checkbox Input Generator",
           description:
-            "Radio and Checkbox Input Generator is a web where developer can make their custom radio and checkbox input for HTML and CSS code and make the developtment process easier and faster.",
+            "Radio and Checkbox Input Generator is a web where developer can make their custom radio and checkbox input for HTML and CSS code and make the development process easier and faster.",
           source: "https://github.com/GunawanAhmad/Radio-Checkbox-Generator",
           link: "https://gunawanahmad.github.io/Radio-Checkbox-Generator/",
           img: "generator.png",
           codeTools: ["HTML", "SCSS", "Javascript"],
           design: "Design by Me with Adobe XD",
           key: 2,
+        },
+        {
+          title: "Pathfinding Visualizer",
+          description:
+            "Pathfinding visualizer is a visualization tool for famous pathfinding algorithm such as Dijsktra and A* Search. The user can choose the start and finish point on the grid and add wall to the grid so the path cannot cross through it.",
+          source: "https://github.com/GunawanAhmad/pathfinding-visualizer",
+          link: "https://gunawanahmad.github.io/pathfinding-visualizer/#/",
+          img: "pathfinding-visualizer.png",
+          codeTools: ["Vue JS", "SCSS"],
+          design: "Design by Me",
+          key: 3,
         },
       ],
     };
