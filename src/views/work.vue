@@ -91,6 +91,17 @@ export default {
           design: "Design by Me",
           key: 3,
         },
+        {
+          title: "Sorting Visualizer",
+          description:
+            "Sorting visualizer is visualization tool for famous sorting algorithm such as Insertion and Selection. The user can random the array and it's also included the pseudo code visualization and a bit of information of the algorithm.",
+          source: "https://github.com/GunawanAhmad/sorting-visualizer",
+          link: "https://gunawanahmad.github.io/sorting-visualizer/",
+          img: "sorting.png",
+          codeTools: ["Vue JS"],
+          design: "Design by Me with Figma",
+          key: 4,
+        },
       ],
     };
   },
