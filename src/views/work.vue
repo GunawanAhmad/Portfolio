@@ -17,10 +17,15 @@
     <div class="work-list">
       <div class="work" v-for="work in myProjects" :key="work.key">
         <div class="information">
-          <h2>0{{ work.key }}.</h2>
+          <h2 class="work-number">0{{ work.key }}.</h2>
           <h1 class="work-title">
             {{ work.title }}
           </h1>
+          <img
+            :src="require(`@/assets/${work.img}`)"
+            alt=""
+            class="mobile-img"
+          />
           <p class="description">
             {{ work.description }}
           </p>
@@ -97,10 +102,21 @@ export default {
             "Sorting visualizer is visualization tool for famous sorting algorithm such as Insertion and Selection. The user can random the array and it's also included the pseudo code visualization and a bit of information of the algorithm.",
           source: "https://github.com/GunawanAhmad/sorting-visualizer",
           link: "https://gunawanahmad.github.io/sorting-visualizer/",
-          img: "sorting.png",
+          img: "sorting.jpg",
           codeTools: ["Vue JS"],
           design: "Design by Me with Figma",
           key: 4,
+        },
+        {
+          title: "Inventory Web App",
+          description:
+            "Inventory web app is an app where the user can store and manage the user property/inventory ",
+          source: "https://github.com/GunawanAhmad/Inventory-Frontend",
+          link: "https://inventory-web-app.herokuapp.com/",
+          img: "inventory.png",
+          codeTools: ["React Js", "SCSS", "NodeJs", "Express", "Mongoose"],
+          design: "Design by Me with Figma",
+          key: 5,
         },
       ],
     };

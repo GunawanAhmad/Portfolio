@@ -129,6 +129,7 @@ export default {
               name: this.name,
               email: this.email,
               message: this.message,
+              date: new Date(),
             },
           })
           .then((res) => {
