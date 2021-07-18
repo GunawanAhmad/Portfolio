@@ -2,7 +2,7 @@
   <div id="app">
     <div class="cursor" ref="cursor" v-if="isMixSupport"></div>
 
-    <div class="welcome" ref="welcome">
+    <!-- <div class="welcome" ref="welcome">
       <svg
         width="962"
         height="155"
@@ -47,7 +47,7 @@
           stroke-width="5"
         />
       </svg>
-    </div>
+    </div> -->
     -->
     <div>
       <navBar />
