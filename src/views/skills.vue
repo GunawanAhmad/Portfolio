@@ -29,24 +29,35 @@
       </p>
       <p>
         Visit my
-        <a href="https://linkedin.com/in/gunawan-ahmad-0148441b7" class="link linkedln">Linkedln</a>
+        <a
+          href="https://linkedin.com/in/gunawan-ahmad-0148441b7"
+          class="link linkedln"
+          >Linkedln</a
+        >
         profile for more details or just
-        <span @click="pageTransition"><router-link to="/contact" class="link contact" >contact me.</router-link></span>
-        
+        <span @click="menuBackgroundAnim(4)"
+          ><router-link to="/contact" class="link contact"
+            >contact me.</router-link
+          ></span
+        >
       </p>
     </div>
     <div class="illus">
       <!-- <h1>My Tools</h1> -->
       <div class="front__end">
         <div
+          class="react stack"
+          @click="showInfo('React.Js', 'react', 'A Javascript framework')"
+        >
+          <p>React.Js</p>
+
+          <span>
+            <i class="fab fa-react"></i>
+          </span>
+        </div>
+        <div
           class="vue stack"
-          @click="
-            showInfo(
-              'Vue.Js',
-              'vue',
-              'A Javascript framework'
-            )
-          "
+          @click="showInfo('Vue.Js', 'vue', 'A Javascript framework')"
         >
           <p>Vue.Js</p>
 
@@ -136,26 +147,32 @@
             <i class="fab fa-node-js"></i>
           </span>
         </div>
-        <div class="node stack" @click="
+        <div
+          class="node stack"
+          @click="
             showInfo(
               'Node Js',
               'node',
               'A Javascript runtime environment that executes JavaScript code outside a web browser. For example for Backend.'
             )
-          ">
+          "
+        >
           <p>Node.Js</p>
 
           <span>
             <i class="fab fa-node"></i>
           </span>
         </div>
-        <div class="mongo stack" @click="
+        <div
+          class="mongo stack"
+          @click="
             showInfo(
               'MongoDB',
               'mongodb',
               'MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program.'
             )
-          ">
+          "
+        >
           <p>MongoDB</p>
 
           <span>
@@ -173,8 +190,7 @@
     <div class="skills-info" ref="skillInfo">
       <div class="card">
         <div class="logo">
-          <img :src="require('../../src/assets/' + icon + '.svg')">
-          
+          <img :src="require('../../src/assets/' + icon + '.svg')" />
         </div>
         <h3>{{ title }}</h3>
         <p>{{ content }}</p>
@@ -187,10 +203,9 @@
 </template>
 
 <script>
-
-import TransitionMixin from '../mixins/transition';
+import TransitionMixin from "../mixins/transition";
 export default {
-  mixins : [TransitionMixin],
+  mixins: [TransitionMixin],
   data() {
     return {
       title: "",
@@ -199,7 +214,6 @@ export default {
     };
   },
   mounted() {
-    
     let warn = this.$refs.warn;
     setTimeout(() => {
       warn.classList.toggle("hide");
@@ -216,7 +230,7 @@ export default {
       this.content = content;
       let info = this.$refs.skillInfo;
       info.classList.toggle("show");
-    },   
+    },
     closeInfo() {
       let info = this.$refs.skillInfo;
       info.classList.toggle("show");
@@ -225,5 +239,4 @@ export default {
 };
 </script>
 
-<style scoped src="../../public/styles/skills.css">
-</style>
+<style scoped src="../../public/styles/skills.css"></style>
