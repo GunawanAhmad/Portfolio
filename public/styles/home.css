@@ -104,7 +104,7 @@ h1 div {
   outline: none;
   border: 3px solid var(--second-color);
   background: none;
-  width: 9em;
+  width: 100%;
   font-size: 1.5vw;
   margin-top: 15px;
   /* cursor: pointer; */
@@ -160,6 +160,10 @@ span.hov {
 
 span.hov:hover {
   transform: rotateZ(-10deg) scale(1.2);
+}
+
+.btn {
+  max-width: 7em;
 }
 
 @keyframes slide {

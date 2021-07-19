@@ -2,7 +2,7 @@
   <div id="app">
     <div class="cursor" ref="cursor" v-if="isMixSupport"></div>
 
-    <!-- <div class="welcome" ref="welcome">
+    <div class="welcome" ref="welcome">
       <svg
         width="962"
         height="155"
@@ -47,8 +47,8 @@
           stroke-width="5"
         />
       </svg>
-    </div> -->
-    -->
+    </div>
+
     <div>
       <navBar />
     </div>
@@ -83,7 +83,10 @@
 
 <script>
 import navBar from "./components/nav.vue";
+import TransitionMixin from "./mixins/transition";
+
 export default {
+  mixins: [TransitionMixin],
   data() {
     return {
       isMixSupport: true,
@@ -109,10 +112,10 @@ export default {
     let btn = this.$store.state.hover;
     btn.forEach((p) => {
       p.addEventListener("mouseenter", () => {
-        cursor.classList.toggle("hover");
+        cursor.classList.add("hover");
       });
       p.addEventListener("mouseleave", () => {
-        cursor.classList.toggle("hover");
+        cursor.classList.remove("hover");
       });
     });
 
@@ -122,6 +125,11 @@ export default {
     setTimeout(() => {
       this.$refs.welcome.classList.toggle("show");
     }, 4000);
+
+    let pathLists = ["/", "/about", "/skills", "/work", "/contact"];
+    let currentPath = this.$route.path;
+    let pageIndex = pathLists.indexOf(currentPath);
+    this.menuBackgroundAnim(pageIndex);
   },
 };
 </script>

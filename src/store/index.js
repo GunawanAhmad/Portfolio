@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     hover: [],
-    backgroundTRansition: null,
+    backgroundTransition: null,
     lastVisitedPage: null,
     aboutPageIcon: null,
     menuBag: null,

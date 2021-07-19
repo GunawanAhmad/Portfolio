@@ -47,7 +47,7 @@
             <p>Front End Developer</p>
           </div>
           <!-- <div class="cursor"></div> -->
-          <div @click="menuBackgroundAnim(1)" ref="btn">
+          <div @click="menuBackgroundAnim(1)" ref="btn" class="btn">
             <router-link class="contact-btn" to="/about">
               about me
               <span class="btn-arrow">
