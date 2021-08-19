@@ -45,34 +45,6 @@
         <span></span>
       </div>
     </nav>
-    <div class="mob-ver" ref="nav">
-      <div class="home" data-content="Home" @click="pageTransition">
-        <router-link to="/">
-          <i class="icon fa fa-home fa"></i>
-        </router-link>
-      </div>
-      <div class="profile" data-content="Profile" @click="pageTransition">
-        <router-link to="/about">
-          <i class="fas fa-user"></i>
-        </router-link>
-      </div>
-
-      <div class="skills" data-content="Skills" @click="pageTransition">
-        <router-link to="/skills">
-          <i class="fas fa-tools"></i>
-        </router-link>
-      </div>
-      <div class="work" data-content="Work" @click="pageTransition">
-        <router-link to="/work">
-          <i class="fas fa-eye"></i>
-        </router-link>
-      </div>
-      <div class="contact" data-content="Contact" @click="pageTransition">
-        <router-link to="/contact">
-          <i class="fas fa-address-card"></i>
-        </router-link>
-      </div>
-    </div>
   </div>
 </template>
 
