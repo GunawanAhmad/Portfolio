@@ -215,8 +215,7 @@ a.active {
     flex-direction: row;
     padding: 0 2rem;
     justify-content: center;
-    top: unset;
-    bottom: 0;
+    position: relative;
   }
   .direct {
     flex-direction: row;

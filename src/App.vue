@@ -2,7 +2,7 @@
   <div id="app">
     <div class="cursor" ref="cursor" v-if="isMixSupport"></div>
 
-    <!-- <div class="welcome" ref="welcome">
+    <div class="welcome" ref="welcome">
       <svg
         width="962"
         height="155"
@@ -47,10 +47,6 @@
           stroke-width="5"
         />
       </svg>
-    </div> -->
-
-    <div>
-      <navBar />
     </div>
 
     <div class="view">
@@ -64,11 +60,14 @@
         </div>
       </div>
 
-      <transition name="fade" mode="out-in">
+      <transition name="fade" mode="out-in" class="route">
         <keep-alive>
           <router-view />
         </keep-alive>
       </transition>
+    </div>
+    <div>
+      <navBar />
     </div>
 
     <div class="trans-back" ref="transition">

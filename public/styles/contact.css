@@ -6,13 +6,16 @@
   background-color: var(--main-color);
   /* margin: 0 20px 0px 0px; */
   padding-left: 20px;
-  
+  height: 100%;
+  width: 100%;
 }
 
 .main {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 .main.hide {
@@ -191,7 +194,6 @@ form button {
     transform: rotate(360deg);
   }
 }
-
 
 @media only screen and (max-width: 1024px) {
   .text {

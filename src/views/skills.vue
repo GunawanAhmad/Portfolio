@@ -181,12 +181,7 @@
         </div>
       </div>
     </div>
-    <div class="warn hide" ref="warn">
-      <span>
-        <i class="fas fa-info-circle"></i>
-      </span>
-      <p>Click the stack for more information!</p>
-    </div>
+
     <div class="skills-info" ref="skillInfo">
       <div class="card">
         <div class="logo">
@@ -212,15 +207,6 @@ export default {
       icon: "vue",
       content: "",
     };
-  },
-  mounted() {
-    let warn = this.$refs.warn;
-    setTimeout(() => {
-      warn.classList.toggle("hide");
-      setTimeout(() => {
-        warn.classList.toggle("hide");
-      }, 3000);
-    }, 3000);
   },
 
   methods: {
