@@ -16,25 +16,33 @@
             <span class="hov">e</span>
           </h1>
         </div>
-        <form action @submit="send">
+        <form @submit="send">
+          <input type="hidden" name="_captcha" value="false" />
           <div class="name">
-            <input type="text" placeholder="Name" required v-model="name" />
+            <input
+              type="text"
+              placeholder="Name"
+              required
+              v-model="name"
+              name="name"
+            />
           </div>
           <div class="email">
             <input
               type="email"
               placeholder="Email address"
+              name="email"
               required
               v-model="email"
             />
           </div>
           <div class="message">
             <textarea
-              name
               id
               cols="30"
               rows="10"
               placeholder="Your Message"
+              name="message"
               required
               v-model="message"
             ></textarea>
@@ -88,8 +96,13 @@
       </div>
     </div>
 
-    <div class="loader hide" ref="loader">
-      <div class="lds-ring"></div>
+    <div class="loader " v-if="isShowingStatus">
+      <div class="lds-ring" v-if="isLoading"></div>
+      <div v-else class="message-status">
+        <b>{{ sendMessageStatus }}</b>
+        <p>{{ statusMessage }}</p>
+        <button @click="toggleStatusPage">OK</button>
+      </div>
     </div>
   </div>
 </template>
@@ -106,6 +119,11 @@ export default {
       name: "",
       email: "",
       message: "",
+      statusMessage:
+        "Your Message has been sent successfully, I will contact you very soon !",
+      sendMessageStatus: "Thank you !",
+      isLoading: false,
+      isShowingStatus: false,
     };
   },
   mounted() {
@@ -121,30 +139,38 @@ export default {
         e.preventDefault();
       } else {
         e.preventDefault();
-        this.$refs.main.classList.toggle("hide");
-        this.$refs.loader.classList.toggle("hide");
+        this.isLoading = true;
+        this.toggleStatusPage();
+        axios.defaults.headers.post["Content-Type"] = "application/json";
         axios
-          .post("https://api.apispreadsheets.com/data/1739/", {
-            data: {
-              name: this.name,
-              email: this.email,
-              message: this.message,
-              date: new Date(),
-            },
+          .post("https://formsubmit.co/ajax/gunawanahmadef@gmail.com", {
+            name: this.name,
+            email: this.email,
+            message: this.message,
           })
           .then((res) => {
             console.log(res);
-            this.$refs.main.classList.toggle("hide");
-            this.$refs.loader.classList.toggle("hide");
             this.email = "";
             this.name = "";
             this.message = "";
             this.checkAnswer = "";
+            this.isLoading = false;
+            this.isShowingStatus = true;
+            this.statusMessage =
+              "Your Message has been sent successfully, I will contact you very soon !";
+            this.sendMessageStatus = "Thank you !";
           })
           .catch((err) => {
             console.log(err);
+            this.isLoading = false;
+            this.statusMessage =
+              "Some error has occured, Please try again next time !";
+            this.sendMessageStatus = "Sorry !";
           });
       }
+    },
+    toggleStatusPage() {
+      this.isShowingStatus = !this.isShowingStatus;
     },
   },
 };
