@@ -39,10 +39,16 @@
             </p>
           </div>
           <div class="links">
-            <a :href="work.link" :class="work.link === '' ? 'disabled' : ''"
+            <a
+              target="_blank"
+              :href="work.link"
+              :class="work.link === '' ? 'disabled' : ''"
               >Visit</a
             >
-            <a :href="work.source" :class="work.source === '' ? 'disabled' : ''"
+            <a
+              target="_blank"
+              :href="work.source"
+              :class="work.source === '' ? 'disabled' : ''"
               >Source Code</a
             >
           </div>
@@ -115,6 +121,17 @@ export default {
           link: "https://inventory-web-app.herokuapp.com/",
           img: "inventory.png",
           codeTools: ["React Js", "SCSS", "NodeJs", "Express", "Mongoose"],
+          design: "Design by Me with Figma",
+          key: 5,
+        },
+        {
+          title: "Indeas.io (Landing Page)",
+          description:
+            "Ideas.io is a collaboration tool that organize your projects",
+          source: "https://github.com/GunawanAhmad/Ideas.io",
+          link: "https://ideas-io-itolrvwjk-gunawanahmad.vercel.app/",
+          img: "ideas.png",
+          codeTools: ["HTML", "Tailwind CSS", "Javascript"],
           design: "Design by Me with Figma",
           key: 5,
         },
