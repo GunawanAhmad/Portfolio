@@ -127,11 +127,21 @@ export default {
         {
           title: "Indeas.io (Landing Page)",
           description:
-            "Ideas.io is a collaboration tool that organize your projects",
+            "Collaboration tool website for managing users projects.",
           source: "https://github.com/GunawanAhmad/Ideas.io",
-          link: "https://ideas-io-itolrvwjk-gunawanahmad.vercel.app/",
+          link: "https://ideas-io.vercel.app/",
           img: "ideas.png",
           codeTools: ["HTML", "Tailwind CSS", "Javascript"],
+          design: "Design by Me with Figma",
+          key: 5,
+        },
+        {
+          title: "Statued (Landing Page)",
+          description: "Online shop for statue customization with 3d look.",
+          source: "https://github.com/GunawanAhmad/Statued",
+          link: "https://statued.vercel.app/",
+          img: "statued.png",
+          codeTools: ["HTML", "Tailwind CSS", "Javascript", "Three Js"],
           design: "Design by Me with Figma",
           key: 5,
         },
