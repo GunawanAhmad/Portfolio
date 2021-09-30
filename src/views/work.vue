@@ -133,7 +133,7 @@ export default {
           img: "ideas.png",
           codeTools: ["HTML", "Tailwind CSS", "Javascript"],
           design: "Design by Me with Figma",
-          key: 5,
+          key: 6,
         },
         {
           title: "Statued (Landing Page)",
@@ -143,7 +143,7 @@ export default {
           img: "statued.png",
           codeTools: ["HTML", "Tailwind CSS", "Javascript", "Three Js"],
           design: "Design by Me with Figma",
-          key: 5,
+          key: 7,
         },
       ],
     };
