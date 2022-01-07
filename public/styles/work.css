@@ -1,38 +1,43 @@
-* {
-  font-family: "Montserrat", sans-serif;
-}
 .work-page {
   background-color: var(--main-color);
+  position: relative;
+  overflow-y: hidden;
+  min-height: 100%;
+  max-width: 1250px;
+  margin: auto;
 }
 
 .work-page .title-page {
-  margin-top: 5rem;
-  text-align: center;
-  font-size: 3rem;
+  font-size: var(--font-title-section);
+  margin-bottom: 3rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 .work-list {
-  margin: 5rem auto 0 auto;
-  width: 90%;
+  margin: 0rem auto 0 auto;
+  width: 100%;
 }
 
 .work-list .work {
   display: flex;
-  justify-content: space-around;
-  padding: 5rem 0;
+  justify-content: space-between;
+  margin-bottom: 10rem;
 }
 
 .work .information {
   width: 50%;
   max-width: 500px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .information .work-title {
   margin-top: 2rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 .information .description {
   margin-top: 2rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 .information .tools {

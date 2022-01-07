@@ -162,6 +162,7 @@ export default {
           })
           .catch((err) => {
             console.log(err);
+            this.isShowingStatus = true;
             this.isLoading = false;
             this.statusMessage =
               "Some error has occured, Please try again next time !";

@@ -1,12 +1,12 @@
 .about {
   background-color: var(--main-color);
-  /* margin: 0 20px 0px 0px; */
-  padding-left: 20px;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 1250px;
+  margin: auto;
 }
 
 .symbols {
@@ -43,13 +43,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 40px;
-  font-size: 2.2vw;
+  font-size: var(--font-title-section);
   color: var(--second-color);
   font-family: "Montserrat", sans-serif;
   letter-spacing: 2px;
   width: 50%;
 }
+
+.text h1 {
+  font-size: var(--font-title-section);
+}
+
 .text p {
   font-size: 1.2vw;
 }
@@ -115,7 +119,7 @@ span.hov:hover {
 
 @media only screen and (max-width: 1024px) {
   .text {
-    width: 90%;
+    width: 100%;
     font-size: 1.2rem;
   }
   .text p {
@@ -137,7 +141,6 @@ span.hov:hover {
     align-items: center;
   }
   .text {
-    margin: 20px;
     font-size: 1rem;
   }
 }
